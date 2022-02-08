@@ -35,7 +35,7 @@
 
 // var cities = ["San Antonio", "Austin", "Dallas", "Houston"];
 // for (var i = 0 ; i < cities.length; i++) {
-//     console.log("At index " + i);
+//    console.log("At index " + i);
 //     console.log("Student " + (i + 1) + " lives in " + cities[i]);
 // }
 
