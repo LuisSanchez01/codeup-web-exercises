@@ -33,8 +33,16 @@
 // // ```
 // // Remember the key concept that you can use the iterator variable (i) to access array elements in a loop.
 
-var cities = ["San Antonio", "Austin", "Dallas", "Houston"];
-for (var i = 0 ; i < cities.length; i++) {
-    console.log("At index " + i);
-    console.log("Student " + (i + 1) + " lives in " + cities[i]);
-}
+// var cities = ["San Antonio", "Austin", "Dallas", "Houston"];
+// for (var i = 0 ; i < cities.length; i++) {
+//     console.log("At index " + i);
+//     console.log("Student " + (i + 1) + " lives in " + cities[i]);
+// }
+
+// For each loop
+var prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+
+prices.forEach(function (price, index){
+    console.log("Item number " + (index + 1) + "costs $ " +price);
+});
+
