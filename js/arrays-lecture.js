@@ -61,21 +61,35 @@
 //
 // groceryList[2] = "peanut butter";
 // console.log(groceryList);
-var groceryList = ["bread", "eggs", "butter", "milk"];
-var firstHalfOfList = groceryList.slice(0, 2);
-console.log(firstHalfOfList);
-console.log(groceryList);
-// This method is used to slice off from the beginning up to but not including element 2.
-var secondHalfOfList = groceryList.slice(2);
-console.log(secondHalfOfList);
-firstHalfOfList.push("peanut butter");
-console.log(firstHalfOfList);
-groceryList = firstHalfOfList.concat(secondHalfOfList);
-console.log(groceryList);
+// var groceryList = ["bread", "eggs", "butter", "milk"];
+// var firstHalfOfList = groceryList.slice(0, 2);
+// console.log(firstHalfOfList);
+// console.log(groceryList);
+// // This method is used to slice off from the beginning up to but not including element 2.
+// var secondHalfOfList = groceryList.slice(2);
+// console.log(secondHalfOfList);
+// firstHalfOfList.push("peanut butter");
+// console.log(firstHalfOfList);
+// groceryList = firstHalfOfList.concat(secondHalfOfList);
+// console.log(groceryList);
+//
+// groceryList.reverse();
+// console.log(groceryList);
+// // Method to reverse order of the list
+// groceryList.sort();
+// console.log(groceryList);
 
-groceryList.reverse();
-console.log(groceryList);
-// Method to reverse order of the list
-groceryList.sort();
-console.log(groceryList);
+
+var hamletQuote = "To be or not to be, that is the question";
+var noCommasHamletQuote = hamletQuote.replace(",","");  //find every space with a comma
+var hamletQuoteArray = noCommasHamletQuote.split(" ")
+console.log(hamletQuoteArray);
+hamletQuoteArray.reverse();
+console.log(hamletQuoteArray); //at this point the quote is in reverse order. You can add .toLowerCase after the replace value
+// next to replace to lowercase the last word in the quote
+var hamletQuoteBackwards = hamletQuoteArray.join(" ");
+console.log(hamletQuoteBackwards);
+
+var hamletQuoteWordList = hamletQuoteArray.join(",");
+console.log(hamletQuoteWordList);
 
