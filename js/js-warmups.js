@@ -44,3 +44,19 @@
 //     }
 // }
 
+// Write a function called removeBs that takes in an array of strings and returns an array of strings with all b’s removed from each string. Assume
+// the array contains only string elements.
+//     Examples...
+// removeBs([‘abc’, ‘ab’, ‘cat’, ‘Bay’]) // returns [‘ac’, ‘a’, ‘cat’, ‘ay’]
+
+function removeBsFromString(str) {
+    return str.replaceAll("b", "").replaceAll("B", "");
+}
+
+function removeBs(arr) {
+    var output = [];
+    arr.forEach(function (str) {
+        output.push(removeBsFromString(str));
+    });
+    return output;
+}
