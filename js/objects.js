@@ -48,15 +48,15 @@
      * and console.log the relevant messages for each person
      */
 
-    var shoppers = [
-        {name: 'Cameron', amount: 180, discountPercentage: 0, amountAfterDiscount: 180},
-        {name: 'Ryan', amount: 250, discountPercentage: 12, amountAfterDiscount: 220},
-        {name: 'George', amount: 320, discountPercentage: 12, amountAfterDiscount: 281.6}
-        ]
-
-    shoppers.forEach(function (name) {
-        console.log(name);
-    });
+    // var shoppers = [
+    //     {name: 'Cameron', amount: 180, discountPercentage: 0, amountAfterDiscount: 180},
+    //     {name: 'Ryan', amount: 250, discountPercentage: 12, amountAfterDiscount: 220},
+    //     {name: 'George', amount: 320, discountPercentage: 12, amountAfterDiscount: 281.6}
+    //     ]
+    //
+    // shoppers.forEach(function (name) {
+    //     console.log(name);
+    // });
 
 
 
@@ -73,18 +73,18 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-    var books = [
-        {bookTitle: "The Salmon of Doubt", authorFirstName: "Michael", authorLastName: "Jordan"},
-        {bookTitle: "Douglas", authorFirstName: "Kobe", authorLastName: "Bryant"},
-        {bookTitle: "Adams", authorFirstName: "Scottie", authorLastName: "Pippen"},
-        {bookTitle: "Winning the lottery", authorFirstName: "Luis", authorLastName: "Sanchez"},
-        {bookTitle: "Billy Madison", authorFirstName: "Adam", authorLastName: "Sandler"},
-]
-        console.log(books[0]);
-        console.log(books[1]);
-        console.log(books[2]);
-        console.log(books[3]);
-        console.log(books[4]);
+//     var books = [
+//         {bookTitle: "The Salmon of Doubt", authorFirstName: "Michael", authorLastName: "Jordan"},
+//         {bookTitle: "Douglas", authorFirstName: "Kobe", authorLastName: "Bryant"},
+//         {bookTitle: "Adams", authorFirstName: "Scottie", authorLastName: "Pippen"},
+//         {bookTitle: "Winning the lottery", authorFirstName: "Luis", authorLastName: "Sanchez"},
+//         {bookTitle: "Billy Madison", authorFirstName: "Adam", authorLastName: "Sandler"},
+// ]
+//         console.log(books[0]);
+//         console.log(books[1]);
+//         console.log(books[2]);
+//         console.log(books[3]);
+//         console.log(books[4]);
 
 
 
@@ -115,18 +115,57 @@
      *      ...
      */
 
-    var books = [
-        {bookNumber:0, bookTitle: "The Salmon of Doubt", Author: "Michael" + " Jordan"},
-        {bookNumber:1, bookTitle: "Douglas", Author: "Kobe" + " Bryant"},
-        {bookNumber:2, bookTitle: "Adams", Author: "Scottie" + " Pippen"},
-        {bookNumber:3, bookTitle: "Winning the lottery", Author: "Luis" + " Sanchez"},
-        {bookNumber:4, bookTitle: "Billy Madison", Author: "Adam" + " Sandler"},
-    ]
-console.log(books[0]);
-console.log(books[1]);
-console.log(books[2]);
-console.log(books[3]);
-console.log(books[4]);
+//     var books = [
+//         {bookNumber:0, bookTitle: "The Salmon of Doubt", Author: "Michael" + " Jordan"},
+//         {bookNumber:1, bookTitle: "Douglas", Author: "Kobe" + " Bryant"},
+//         {bookNumber:2, bookTitle: "Adams", Author: "Scottie" + " Pippen"},
+//         {bookNumber:3, bookTitle: "Winning the lottery", Author: "Luis" + " Sanchez"},
+//         {bookNumber:4, bookTitle: "Billy Madison", Author: "Adam" + " Sandler"},
+//     ]
+// console.log(books[0]);
+// console.log(books[1]);
+// console.log(books[2]);
+// console.log(books[3]);
+// console.log(books[4]);
+
+// var books = [
+//     {
+//         title: '1984',
+//         author: {
+//             firstName: 'George',
+//             lastName: 'Orwell'
+//         }
+//     },
+//     {
+//         title: 'Book 2',
+//         author: {
+//             firstName: 'FirstName2',
+//             lastName: 'LastName2'
+//         }
+//     },
+//     {
+//         title: 'Book 3',
+//         author: {
+//             firstName: 'FirstName3',
+//             lastName: 'LastName3'
+//         }
+//     },
+//     {
+//         title: 'Book 4',
+//         author: {
+//             firstName: 'FirstName4',
+//             lastName: 'LastName4'
+//         }
+//     }
+// ];
+//
+// for (var i = 0; i < books.length; i++) {
+//     var bookMsg = 'Book # ' + (i + 1) + '\n' +
+//         'Title: ' + books[i].title + '\n' +
+//         'Author: ' + books[i].author.firstName + ' ' + books[i].author.lastName + '\n' +
+//         '---';
+//     console.log(bookMsg);
+// }
 
 
 

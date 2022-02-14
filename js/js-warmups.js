@@ -49,14 +49,52 @@
 //     Examples...
 // removeBs([‘abc’, ‘ab’, ‘cat’, ‘Bay’]) // returns [‘ac’, ‘a’, ‘cat’, ‘ay’]
 
-function removeBsFromString(str) {
-    return str.replaceAll("b", "").replaceAll("B", "");
-}
+// function removeBsFromString(str) {
+//     return str.replaceAll("b", "").replaceAll("B", "");
+// }
+//
+// function removeBs(arr) {
+//     var output = [];
+//     arr.forEach(function (str) {
+//         output.push(removeBsFromString(str));
+//     });
+//     return output;
+// }
 
-function removeBs(arr) {
-    var output = [];
-    arr.forEach(function (str) {
-        output.push(removeBsFromString(str));
-    });
-    return output;
-}
+// Write a function, createUserMsg, that takes in a user object like the following...
+// {
+//     username: ‘jbomb’,
+//     email: ‘john@email.com’,
+//     isAdmin: true
+// }
+// ...and returns a string output that displays in the console like this...
+// ‘User jbomb is an admin and can be reached at john@email.com’
+// If jbomb were not an admin, the message should display...
+// ‘User jbomb is not an admin and can be reached at john@email.com’
+
+// var createUserMsg = [{
+//     username: "jbomb",
+//     email: "john@email.com",
+//     isAdmin: true,
+//     message: "User jbomb is an admin and can be reached at john@email.com",
+// }];
+// createUserMsg.forEach(function (createUserMsg){
+//     console.log(createUserMsg.message);
+// });
+
+// var createUserMsg = {
+//     username: "jbomb",
+//     email: "john@email.com",
+//     isAdmin: true,
+// };
+//
+// function createUserMsg(user) {
+//     if (user.isAdmin) {
+//         return "User " + user.username + "is an admin and can be reached at " + user.email
+//     } else {
+//         return "User " + user.username + "is not an admin and can be reached at " + user.email;
+//     }
+// }
+// console.log(createUserMsg(user));
+
+
