@@ -1,3 +1,18 @@
 li {
     color: darkslategrey;
 }
+
+/*.declarative {*/
+/*      color: rebeccapurple;*/
+/*}*/
+
+ul li {
+    list-style-type: none;
+}
+
+ol li{
+    list-style-type: lower-roman;
+}
+.programming {
+    clor: #064406;
+}
