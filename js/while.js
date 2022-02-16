@@ -1,5 +1,5 @@
-let count = 1;
-while (count < 10) {
+let count = 2;
+while (count < 65536) {
     console.log(count);
-    count +=2;
+    count *=2;
 }
