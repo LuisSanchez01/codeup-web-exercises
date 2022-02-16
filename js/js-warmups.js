@@ -97,4 +97,18 @@
 // }
 // console.log(createUserMsg(user));
 
+// const areaOrPerimeter = function(l , w) {
+//
+//     // Return your answer
+// };
+function areaOrPerimeter(length, width) {
+    if (isNaN(parseFloat(length)) || isNaN(parseFloat(width)){
+    if (length == width) {
+        return false;
+    }
+     return   length * width;
+}
+};
+console.log(areaOrPerimeter(4, 4));
+console.log(areaOrPerimeter(6, 10));
 
