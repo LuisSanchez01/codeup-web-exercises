@@ -1,4 +1,44 @@
-.fancy-header {
-    color: purple;
+body {
+    background-color: yellow;
+    background-image: url("../images/pexels-pixabay-36717.400width.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+
+.fancy-heading {
+    color: green;
     text-decoration: underline;
+    text-align: center;
+}
+
+header {
+    color: #28004d;
+    text-decoration: underline;
+}
+
+li {
+    list-style-type: armenian;
+}
+
+.fancy-heading {
+    text-decoration: underline;
+}
+
+table {
+   margin: auto;
+    border: thin solid black;
+    font-size: 1.2em;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: thin dotted gray;
+    padding: 10px;
+}
+
+th {
+    background-color: indianred;
 }
