@@ -101,14 +101,44 @@
 //
 //     // Return your answer
 // };
-function areaOrPerimeter(length, width) {
-    if (isNaN(parseFloat(length)) || isNaN(parseFloat(width)){
-    if (length == width) {
+// function areaOrPerimeter(length, width) {
+//     if (isNaN(parseFloat(length)) || isNaN(parseFloat(width)){
+//     if (length == width) {
+//         return false;
+//     }
+//      return   length * width;
+// }
+// };
+// console.log(areaOrPerimeter(4, 4));
+// console.log(areaOrPerimeter(6, 10));
+
+// Write a function, sumTheStrings
+// it should take two numeric strings as input
+//it should add the numbers
+//and output the sum **as a string**
+
+// bonus: return false if the arguments
+// are anything other than numeric strings
+
+
+// function sumTheStrings([a, b]) {
+//     return (a) + (b) + " ";
+//     if (input !== number) {
+//         return false;
+//     }
+// }
+// console.log(sumTheStrings([2, 3]));
+// console.log(sumTheStrings([x, y]));
+
+// Same problem but different solution
+
+function sumTheStrings(numString1, numString2){
+    if (typeof numString1 !== "string" || typeof numString2 !== "string" || isNaN(parseFloat(numString2)) || isNaN(parseFloat(numString1))){
         return false;
     }
-     return   length * width;
+    return (parseFloat(numString1) + parseFloat(numString2)).toString()
 }
-};
-console.log(areaOrPerimeter(4, 4));
-console.log(areaOrPerimeter(6, 10));
+
+
+
 
