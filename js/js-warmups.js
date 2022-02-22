@@ -1,6 +1,3 @@
-
-
-
 //write a function that in a number and returns that number plus itself
 
 // function numberPlusItself(number) {
@@ -132,13 +129,26 @@
 
 // Same problem but different solution
 
-function sumTheStrings(numString1, numString2){
-    if (typeof numString1 !== "string" || typeof numString2 !== "string" || isNaN(parseFloat(numString2)) || isNaN(parseFloat(numString1))){
-        return false;
+// function sumTheStrings(numString1, numString2){
+//     if (typeof numString1 !== "string" || typeof numString2 !== "string" || isNaN(parseFloat(numString2)) || isNaN(parseFloat(numString1))){
+//         return false;
+//     }
+//     return (parseFloat(numString1) + parseFloat(numString2)).toString()
+
+
+function createNames(arr1, arr2) {
+    var output = [];
+    var length = arr1.length;
+    for (var i = 0; i < arr1.length; i += 1) {
+        outpput.push({
+            firstName: arr1[i],
+            lastName: arr2[i]
+        });
     }
-    return (parseFloat(numString1) + parseFloat(numString2)).toString()
+    return output;
 }
+    var firstNames = ["CJ", "Max", "Claude", "Meowmeow"];
+    var lastNames = ["Cat", "Feline", "Kitten", "Calico"];
 
 
-
-
+console.log(createNames(firstNames, lastNames));
