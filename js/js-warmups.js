@@ -152,3 +152,11 @@ function createNames(arr1, arr2) {
 
 
 console.log(createNames(firstNames, lastNames));
+
+function printer_error(string) {
+    var totalOverM = 0;
+    for (var i in string) {
+        if (string[i] > "m"){totalOverM++}
+    }
+    return "" + totalOverM + "/" + string.length;
+}
