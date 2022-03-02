@@ -28,3 +28,22 @@ function alertStatus () {
 
 theSquare.addEventListener("click", alertStatus);
 
+
+var firstButton = document.querySelector("button");
+// get the reference to the element
+function showAlert() {
+    document.querySelector("p").innerHTML = "You clicked me!";
+}
+// write the event handler
+// register the event handler with a button
+firstButton.addEventListener("click", showAlert);
+// now get a reference to the second button
+var secondButton = document.querySelectorAll("button")[1];
+
+function overWriteText() {
+    document.querySelector("p").innerHTML = "uh-uh, the user ckicked me!";
+}
+
+secondButton.addEventListener("click", overWriteText);
+
+
