@@ -48,7 +48,7 @@ submitButton.onclick = function () {
         paragraphs[i].style.color = userInput;
     }
 }
-// this code allows user to inout any color and the alert will show the color in text.
+// this code allows user to input any color and the alert will show the color in text.
 
 // Using data attributes
 
@@ -57,15 +57,15 @@ var theHulk = document.getElementById("hulk");
 // get a reference to the data attribute, old school
 var hulkState = theHulk.getAttribute("data-state");
 // output the value of the data-state attribute to the page
-theHulk.innerText += " is in " + hulkState + " state";
+// theHulk.innerText += " is in " + hulkState + " state";
 
 // get the value of the data-strength attribute the "new" way
 var hulkStrength = theHulk.dataset.strength;
 
-theHulk.innerText += ". His strength is " + hulkStrength;
+// theHulk.innerText += ". His strength is " + hulkStrength;
 
 var hulkIntelligence = theHulk.dataset.intelligence;
-theHulk.innerText += " His intelligence is " + hulkIntelligence + ".";
+// theHulk.innerText += " His intelligence is " + hulkIntelligence + ".";
 
 // get a reference to the transform hulk button
 var transformButton = document.getElementById("transformHulk");
@@ -77,7 +77,7 @@ transformButton.onclick = function () {
     } else {
         hulk.dataset.state = "hulk";
     }
-    theHulk.innerText = "The Hulk is in " + theHulk.dataset.state + " state";
+    hulk.innerText = "The Hulk is in " + hulk.dataset.state + " state";
 }
 
 
