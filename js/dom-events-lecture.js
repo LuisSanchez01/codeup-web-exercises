@@ -40,10 +40,6 @@ firstButton.addEventListener("click", showAlert);
 // now get a reference to the second button
 var secondButton = document.querySelectorAll("button")[1];
 
-function overWriteText() {
-    document.querySelector("p").innerHTML = "uh-uh, the user ckicked me!";
-}
-
-secondButton.addEventListener("click", overWriteText);
+secondButton.addEventListener("click", showAlert);
 
 

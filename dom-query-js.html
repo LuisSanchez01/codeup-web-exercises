@@ -31,6 +31,14 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
+
+<ul>
+    <li><button id="btn1">I was here first</button></li>
+    <li><button id="btn2">I second that</button></li>
+    <li><button id="btn3">Three amigos</button></li>
+    <li><button id="btn4">4th kind</button></li>
+</ul>
+<p></p>
 <h2 id="sub-header">Hello Again.</h2>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -43,32 +51,40 @@
 </p>
 
 <script>
-    (function() {
+    // (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
         var mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+        var javaScript = function () {
         mainHeader.innerText = mainHeader.innerText + " Javascript is Cool";
+        }
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.setAttribute("class", "blue");
+        var blue = function () {
+            subHeader.setAttribute("class", "blue");
+        }
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
 
         // TODO: Set text color on every other list item to grey
-        for (var i = 0; i < listItems.length; i++) {
-            listItems[i].style.color = "grey";
+        var grey = function () {
+            for (var i = 0; i < listItems.length; i++) {
+                listItems[i].style.color = "grey";
+            }
         }
 
         // TODO: Set text color of li with dbid = 1 to blue
-        for (var i = 0; i < listItems.length; i++) {
-            if (listItems[i].getAttribute("data-dbid") === "1") {
-                listItems[i].style.color = "blue";
+        var dbId = function () {
+            for (var i = 0; i < listItems.length; i++) {
+                if (listItems[i].getAttribute("data-dbid") === "1") {
+                    listItems[i].style.color = "blue";
+                }
             }
         }
 
@@ -77,7 +93,17 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         subParagraphs[0].innerHTML = " Mission Accomplished!";
-    })();
+    // })();
+
+    var listener = function () {
+        alert("You clicked the button!");
+    }
+    document.getElementById('btn1').addEventListener('click', javaScript);
+    document.getElementById('btn2').addEventListener('click', blue);
+    document.getElementById('btn3').addEventListener('click', grey);
+    document.getElementById('btn4').addEventListener('click', dbId);
+
+
 </script>
 </body>
 </html>
