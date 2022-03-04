@@ -136,28 +136,92 @@
 //     return (parseFloat(numString1) + parseFloat(numString2)).toString()
 
 
-function createNames(arr1, arr2) {
-    var output = [];
-    var length = arr1.length;
-    for (var i = 0; i < arr1.length; i += 1) {
-        outpput.push({
-            firstName: arr1[i],
-            lastName: arr2[i]
-        });
-    }
-    return output;
+// function createNames(arr1, arr2) {
+//     var output = [];
+//     var length = arr1.length;
+//     for (var i = 0; i < arr1.length; i += 1) {
+//         outpput.push({
+//             firstName: arr1[i],
+//             lastName: arr2[i]
+//         });
+//     }
+//     return output;
+// }
+//     var firstNames = ["CJ", "Max", "Claude", "Meowmeow"];
+//     var lastNames = ["Cat", "Feline", "Kitten", "Calico"];
+//
+//
+// console.log(createNames(firstNames, lastNames));
+//
+// function printer_error(string) {
+//     var totalOverM = 0;
+//     for (var i in string) {
+//         if (string[i] > "m"){totalOverM++}
+//     }
+//     return "" + totalOverM + "/" + string.length;
+// }
+
+// 03/04/2022
+// Create a function that accepts an object with two properties, parcelNumber and weight, and returns the weight.
+
+function parcelWeight(object){
+    return object.weight;
 }
-    var firstNames = ["CJ", "Max", "Claude", "Meowmeow"];
-    var lastNames = ["Cat", "Feline", "Kitten", "Calico"];
 
-
-console.log(createNames(firstNames, lastNames));
-
-function printer_error(string) {
-    var totalOverM = 0;
-    for (var i in string) {
-        if (string[i] > "m"){totalOverM++}
-    }
-    return "" + totalOverM + "/" + string.length;
+var parcel = {
+    parcelNumber: 1,
+    weight: 20
 }
+
+console.log(parcelWeight(parcel));
+// output 20
+
+
+// Create a function that accepts an array of objects with two properties, parcelNumber and weight, and returns the
+// total weight of all parcels.
+
+function totalWeight(arrayOfObjects){
+    var total = 0;
+    for (var i = 0; i < arrayOfObjects.length; i++){
+        total+= arrayOfObjects[i].weight;
+    }
+    return total;
+}
+
+var parcels = [{number: 1, weight: 20}, {number: 2, weight: 25}];
+
+totalWeight([{parcelNumber: 1, weight: 20}, {parcelNumber: 2, weight: 25}]);
+// output 45
+
+// Create a function that accepts an array of objects with two properties, parcelNumber and weight, and outputs the
+// content to a web page in two columns, with the total listed at the end.
+
+function outputParcelInfo(parcelsArray){
+    var outputDiv = document.getElementById("parcelInfo");
+    var total = 0;
+    var html = "<th><tr><th>Parcel Number</th></th>Weight</th>";
+    for (var i = 0; i < parcelsArray.length; i++){
+        total += parcelsArray[i].weight;
+        html += "<tr><td>" + parcelsArray[i].number + "</td><td>" + parcelsArray[i].weight + "</td></tr></tr>";
+    }
+    html += "<tr><td>Total:</td></td>" + total + "</td></table>";
+    outputDiv.innerHTML = html;
+}
+
+// DOM warmup:
+// Create a heading that says "Good morning!"
+// Create a button that says "Press if after 12pm"
+// When the button is pressed, "Good morning" changes to "Good afternoon"
+
+// var theButton = document.querySelector("button");
+//
+// theButton.addEventListener("click", function (){
+//     document.querySelector(("h1").innerText = "Good afternoon!";
+//     )
+// })  Wrong, Git pull for correct structure
+
+
+
+
+
 
