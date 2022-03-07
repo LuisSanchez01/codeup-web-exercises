@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Exercises</title>
+</head>
+<body>
+
+<h1>jQuery Exercises</h1>
+
+<div id="container">
+    <h1 id="header">text inside of the h1</h1>
+    <p id="id1" class="text"> text</p>
+    <p id="id2" class="text"> text</p>
+    <p id="id3" class="text"> text</p>
+
+    <ul class="list">
+    <li class="codeup item1">text</li>
+    <li class="item2" id="codeup">text</li>
+    <li class="codeup item3">text</li>
+        <li class="item4">text</li>
+    </ul>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+
+<script>
+
+"use strict";
+
+$(document).ready(function() {
+// console.log(jQuery);
+// console.log($);
+
+// way to change the heading-----$("h1").html("Hello, Titan!");
+//     and color $("h1").html("Hello, Titan!").css("color", "lime");
+
+    // alert($("#id1").html());
+    //
+    // alert($("#id2").html());
+
+    // Class selectors
+    //   $(".codeup").css("border", "1px dashed red");
+
+    //   Removing
+    //   $(".codeup:first").removeClass("codeup")
+
+    // Element selectors
+    $("li").css("font-size", "20px");
+
+    $("li").css("background-color", "red");
+
+    alert($("h1").html());
+
+
+    // $("h1").html("Jordan is still the best ever!");
+    //
+    // $("p").add("<span>He led the Bulls to two three-peats</span>").appendTo(document.body);
+    //
+    // $("<div><p>Hello</p></div>").appendTo("body");
+    //
+    // $("ul").add("<span>Defeated</span>").appendTo(document.body);
+    //
+    // $("li").add("<span> Lakers, Trailblazers, Suns, Sonics</span>").appendTo(document.body);
+
+
+
+
+
+
+
+
+});
+</script>
+
+</body>
+</html>
