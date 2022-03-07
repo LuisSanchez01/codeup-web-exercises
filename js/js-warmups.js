@@ -164,49 +164,49 @@
 // 03/04/2022
 // Create a function that accepts an object with two properties, parcelNumber and weight, and returns the weight.
 
-function parcelWeight(object){
-    return object.weight;
-}
-
-var parcel = {
-    parcelNumber: 1,
-    weight: 20
-}
-
-console.log(parcelWeight(parcel));
+// function parcelWeight(object){
+//     return object.weight;
+// }
+//
+// var parcel = {
+//     parcelNumber: 1,
+//     weight: 20
+// }
+//
+// console.log(parcelWeight(parcel));
 // output 20
 
 
 // Create a function that accepts an array of objects with two properties, parcelNumber and weight, and returns the
 // total weight of all parcels.
 
-function totalWeight(arrayOfObjects){
-    var total = 0;
-    for (var i = 0; i < arrayOfObjects.length; i++){
-        total+= arrayOfObjects[i].weight;
-    }
-    return total;
-}
-
-var parcels = [{number: 1, weight: 20}, {number: 2, weight: 25}];
-
-totalWeight([{parcelNumber: 1, weight: 20}, {parcelNumber: 2, weight: 25}]);
+// function totalWeight(arrayOfObjects){
+//     var total = 0;
+//     for (var i = 0; i < arrayOfObjects.length; i++){
+//         total+= arrayOfObjects[i].weight;
+//     }
+//     return total;
+// }
+//
+// var parcels = [{number: 1, weight: 20}, {number: 2, weight: 25}];
+//
+// totalWeight([{parcelNumber: 1, weight: 20}, {parcelNumber: 2, weight: 25}]);
 // output 45
 
 // Create a function that accepts an array of objects with two properties, parcelNumber and weight, and outputs the
 // content to a web page in two columns, with the total listed at the end.
 
-function outputParcelInfo(parcelsArray){
-    var outputDiv = document.getElementById("parcelInfo");
-    var total = 0;
-    var html = "<th><tr><th>Parcel Number</th></th>Weight</th>";
-    for (var i = 0; i < parcelsArray.length; i++){
-        total += parcelsArray[i].weight;
-        html += "<tr><td>" + parcelsArray[i].number + "</td><td>" + parcelsArray[i].weight + "</td></tr></tr>";
-    }
-    html += "<tr><td>Total:</td></td>" + total + "</td></table>";
-    outputDiv.innerHTML = html;
-}
+// function outputParcelInfo(parcelsArray){
+//     var outputDiv = document.getElementById("parcelInfo");
+//     var total = 0;
+//     var html = "<th><tr><th>Parcel Number</th></th>Weight</th>";
+//     for (var i = 0; i < parcelsArray.length; i++){
+//         total += parcelsArray[i].weight;
+//         html += "<tr><td>" + parcelsArray[i].number + "</td><td>" + parcelsArray[i].weight + "</td></tr></tr>";
+//     }
+//     html += "<tr><td>Total:</td></td>" + total + "</td></table>";
+//     outputDiv.innerHTML = html;
+// }
 
 // DOM warmup:
 // Create a heading that says "Good morning!"
@@ -221,7 +221,107 @@ function outputParcelInfo(parcelsArray){
 // })  Wrong, Git pull for correct structure
 
 
+// Consider the following array of users:
 
 
+// 1. Create a function, returnFirstUser, that takes in an array of user objects and returns the first user object.
+//
+// returnFirstUser(users) should return...
+
+// {
+//     username: 'fsmith';
+//         email: 'fsmith@email.com';
+//     numberOfLogins: 23
+// }
+//     var users = [
+//         {
+//             username: 'fsmith',
+//             email: 'fsmith@email.com',
+//             numberOfLogins: 23
+//         },
+//         {
+//             username: 'ksmith',
+//             email: 'ksmith@email.com',
+//             numberOfLogins: 100
+//         },
+//         {
+//             username: 'lsmith',
+//             email: 'lsmith@email.com',
+//             numberOfLogins: 10
+//         },
+//
+//     ];
+// var [firstUserFound] = users.filter(el => el.isUserName);
+// console.log(firstUserFound.name);
+
+// 2. Create a function, returnTotalUserLogins, that takes in an array of user objects and returns the total count of logins
+// for all users.
+//
+// returnTotalUserLogins(users) should return... 133
+
+// 3. (optional bonus) create a function, returnMostFrequentUser, that takes in an array of user objects and returns the
+// user object with the highest number of logins.
+//
+//
+// returnMostFrequentUser(users) should return...
+
+// {
+//     username: 'ksmith';
+//         email: 'ksmith@email.com';
+//     numberOfLogins: 100
+// }
+
+var users = [
+    {
+        username: 'fsmith',
+        email: 'fsmith@email.com',
+        numberOfLogins: 23
+    },
+    {
+        username: 'ksmith',
+        email: 'ksmith@email.com',
+        numberOfLogins: 100
+    },
+    {
+        username: 'lsmith',
+        email: 'lsmith@email.com',
+        numberOfLogins: 10
+    },
+
+];
+
+function returnFirstUser(users){
+    return users[0];
+}
+
+console.log(returnFirstUser(users));
 
 
+function returnTotalUserLogins(users){
+    var total = 0;
+    for (var i = 0; i < users.length; i += 1) {
+        console.log(users[i].numberOfLogins);
+        total += users[i].numberOfLogins;
+    }
+        // commented out to show the forEach route below
+//     users.forEach(function (users)
+//     total += user.numberOfLogins;
+// });
+    return total;
+}
+
+console.log(returnTotalUserLogins(users));
+
+function returnMostFrequentUser(users){
+    var mostFrequentUser = {
+        numberOfLogins: 0
+    };
+    users.forEach(function(user){
+        if (user.numberOfLogins > mostFrequentUser.numberOfLogins) {
+        mostFrequentUser = user
+        }
+    });
+return mostFrequentUser;
+}
+
+console.log(returnMostFrequentUser(users));
