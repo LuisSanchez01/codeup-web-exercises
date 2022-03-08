@@ -10,15 +10,15 @@
 
 <div id="container">
     <h1 id="header">text inside of the h1</h1>
-    <p id="id1" class="text"> text</p>
-    <p id="id2" class="text"> text</p>
-    <p id="id3" class="text"> text</p>
+    <p id="id1" class="text"> San Francisco 49ers</p>
+    <p id="id2" class="text"> Las Vegas Raiders</p>
+    <p id="id3" class="text"> Green Bay Packers</p>
 
     <ul class="list">
-    <li class="codeup item1">text</li>
-    <li class="item2" id="codeup">text</li>
-    <li class="codeup item3">text</li>
-        <li class="item4">text</li>
+    <li class="codeup item1">Chicago Bulls</li>
+    <li class="item2" id="codeup">Los Angeles Lakers</li>
+    <li class="codeup item3">Miami Heat</li>
+        <li class="item4">San Antonio Spurs</li>
     </ul>
 
 </div>
@@ -31,7 +31,7 @@
 
 "use strict";
 
-$(document).ready(function() {
+// $(document).ready(function() {
 // console.log(jQuery);
 // console.log($);
 
@@ -49,11 +49,11 @@ $(document).ready(function() {
     //   $(".codeup:first").removeClass("codeup")
 
     // Element selectors
-    $("li").css("font-size", "20px");
-
-    $("li").css("background-color", "red");
-
-    alert($("h1").html());
+    // $("li").css("font-size", "20px");
+    //
+    // $("li").css("background-color", "red");
+    //
+    // alert($("h1").html());
 
 
     // $("h1").html("Jordan is still the best ever!");
@@ -66,14 +66,30 @@ $(document).ready(function() {
     //
     // $("li").add("<span> Lakers, Trailblazers, Suns, Sonics</span>").appendTo(document.body);
 
+// });
 
-
-
-
-
-
-
+$('h1').click(function () {
+    $(this).css('background-color', 'blue');
 });
+
+$('p').dblclick(function () {
+    $(this).css('font-size', '18px');
+});
+
+$('li').hover(function () {
+    $(this).css('color', 'red');
+}, function () {
+    $(this).css('color', 'black');
+});
+
+    // $('.box').hover(function() {
+    //     $(this).css('border-radius', '100px');
+    // }, function() {
+    //     $(this).css('border-radius', '0px');
+    // });
+
+
+
 </script>
 
 </body>
