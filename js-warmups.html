@@ -1,20 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+ <head>
+     <meta charset="UTF-8">
     <title>js-warmups.html</title>
-</head>
+<script src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous">
+</script>
+ </head>
 <body>
+<script>
+    // <h1>Good morning!</h1>
+// <form>
+// // <button>Press if after 12pm</button>
+//
+// </form>
 
-<h1>Good morning!</h1>
-<form>
-<button>Press if after 12pm</button>
+<!--================================= WARM UP-->
 
-</form>
+<!--Create a function, computeOperations, that takes in an array of operation objects and a starting integer value and returns an integer after all the calculations have completed, using the second integer argument as the first operand. Each operation object will have the following shape:-->
+
+<!--{-->
+// operation: 'subtract' (or 'multiply' or 'add'),
+// integer: 7 (or any positive or negative integer)
+// }
+//
+// Example 1...
+// var operations1 = [
+//
+// {
+// operation: 'add',
+// integer: 7
+// },
+// {
+// operation: 'add',
+// integer: 3
+// }
+// ]
 
 
-<div>Parcel Info</div>
-<script src="js/js-warmups.js"></script>
+//    create a total variable that we'll change with each iteration of loop
+//     loop through each operation and console log each number
+        // console.log(operator.integer);
+        // console.log(operator.operation);
+//    based on the operation value, we can add/subtract or multiply the current integer
+//    to return total variable
+// computeOperations(operations1, 10) // returns 20
 
+
+// <!--Example 2...-->
+//
+// var operations2 = [
+//
+//     {
+//         operation: 'add',
+//         integer: 7
+//     },
+//     {
+//         operation: 'add',
+//         integer: 3
+//     },
+//     {
+//         operation: 'multiply',
+//         integer: 3
+//     },
+// ]
+//
+// <!--computeOperations(operations2, 10) // returns 60-->
+//
+//
+// <!--Example 3...-->
+//
+// var operations3 = [
+//
+//         {
+//             operation: 'subtract',
+//             integer: 5
+//         },
+//         {
+//             operation: 'multiply',
+//             integer: -2
+//         },
+//         {
+//             operation: 'add',
+//             integer: 10
+//         },
+//     ]
+//
+// <!--computeOperations(operations3, 10) // returns 0-->
+//
+//
+    var operations1 = [
+        {
+            operation: 'add',
+            integer: 7
+        },
+        {
+            operation: 'add',
+            integer: 3
+        }
+    ];
+
+    var operations2 = [
+        {
+            operation: 'add',
+            integer: 7
+        },
+        {
+            operation: 'add',
+            integer: 3
+        },
+        {
+            operation: 'multiply',
+            integer: 3
+        },
+    ];
+
+    var operations3 = [
+        {
+            operation: 'subtract',
+            integer: 5
+        },
+        {
+            operation: 'multiply',
+            integer: -2
+        },
+        {
+            operation: 'add',
+            integer: 10
+        }
+    ]
+
+    function computeOperations(operators, startingNum) {
+        // create a total variable that we'll change with each iteration of loop
+        var total = startingNum;
+
+        // loop through each operation and console log each number
+        operators.forEach(function(operator) {
+            if (operator.operation === 'add') {
+                total += operator.integer;
+            } else if (operator.operation === 'subtract') {
+                total -= operator.integer;
+            } else if (operator.operation === 'multiply') {
+                total *= operator.integer;
+            }
+            // console.log(operator.integer);
+            // console.log(operator.operation);
+        });
+        // based on the operation value, we can add/subtract/multiple the current integer to the total variable
+        // return total variable
+        return total;
+    }
+
+
+    console.log(computeOperations(operations1, 10), 20);
+    console.log(computeOperations(operations2, 10), 60);
+    console.log(computeOperations(operations3, 10), 0);
+
+
+
+</script>
 </body>
 </html>
