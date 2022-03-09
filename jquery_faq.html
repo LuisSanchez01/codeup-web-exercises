@@ -159,6 +159,7 @@
           visibility: hidden;
         }
 
+
     </style>
 </head>
 <body>
@@ -208,23 +209,64 @@
     <dt>Can I drive my RV along the Going-to-the-Sun Road?</dt>
     <dd class="invisible">Vehicles, and vehicle combinations, longer than 21 feet (including bumpers) or wider than 8 feet (including mirrors) are prohibited between Avalanche Campground and the Sun Point parking area. You may however, drive to Avalanche if traveling east, and to Sun Point, if traveling west. Vehicles over 10 feet in height may have difficulty driving west from Logan Pass due to rock overhangs. Stock trucks and trailers may access Packers Roost and Siyeh Bend.</dd>
 </dl>
+<h2 id="national-parks-heading">National Parks</h2>
+<h3>Big Bend</h3>
+<ul id="national-parks-texas">
+    <li>Big Bend National Park is an American national park located in West Texas, bordering Mexico.</li>
+    <li>The park has national significance as the largest protected area of Chihuahuan Desert topography and ecology in the United States</li>
+    <li>Was named after a large bend in the Rio Grande/Río Bravo</li>
+    <li id="last">The park protects more than 1,200 species of plants, more than 450 species of birds, 56 species of reptiles, and 75 species of mammals</li>
+</ul>
+<h3>Joshua tree</h3>
+<ul id="national-park-california">
+    <li>Joshua Tree National Park is an American national park in southeastern California, east of San Bernardino and Los Angeles and north Palm Springs.</li>
+    <li>It is named after the Joshua trees (Yucca brevifolia) native to the Mojave Desert</li>
+    <li>Originally declared a national monument in 1936, Joshua Tree was redesignated as a national park in 1994 when the U.S. Congress passed the California Desert Protection Act</li>
+    <li id="last">Slightly larger than the state of Rhode Island </li>
+</ul>
+<h3>Rio Grande Nature Center</h3>
+<ul id="national-parks-new mexico">
+    <li>The Rio Grande Nature Center is a 38-acre urban wildlife preserve established in 1982</li>
+    <li>About two thirds of the grounds of the Park are set aside as habitat for wildlife.</li>
+    <li>The remaining acreage contains a visitors center, two gardens, several wildlife viewing areas, an education building and a building housing the non-profit Wildlife Rescue, Inc.</li>
+    <li id="last">There are four constructed ponds which provide habitat for birds and other wildlife and which mimic wetland features of the historical flood plain of the Rio Grande.</li>
+</ul>
 
-<button>Toggle Answers</button>
+<button>Mellow Yellow</button>
+<script>
+   $("#national-park-california").last().css("background-color", "yellow");
+   $("#national-parks-texas").last().css("background-color", "yellow");
+   $("#national-park-new mexico").last().css("background-color", "yellow");
+
+   $(document).ready(function () {
+       $("button").click(function () {
+           $("last").each(function (index, element) {
+               $(element).background("highlight")
+           })
+       });
+   })
+
+   $("li").css("background", "yellow").last()
+
+
+</script>
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.js"
         integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous"></script>
 
-<script>
+<!--<button>Toggle Answers</button>-->
+<!--<script>-->
 
-    $(document).ready(function () {
-        $("button").click(function () {
-            $("dd").each(function (index, element) {
-                $(element).toggleClass("invisible")
-            })
-        });
-    })
-</script>
+<!--    $(document).ready(function () {-->
+<!--        $("button").click(function () {-->
+<!--            $("dd").each(function (index, element) {-->
+<!--                $(element).toggleClass("invisible")-->
+<!--            })-->
+<!--        });-->
+<!--    })-->
+<!--</script>-->
 
 </body>
 </html>
