@@ -265,6 +265,14 @@
        $(this).next().css('font-weight', 'bold');
    });
 
+   $('li').click(function() {
+       $(this)
+           .parent()
+           .children()
+           .first()
+           .css('color', 'blue');
+   });
+
    // $("#national-park-california").last().css("background-color", "yellow");
    // $("#national-parks-texas").last().css("background-color", "yellow");
    // $("#national-park-new mexico").last().css("background-color", "yellow");
