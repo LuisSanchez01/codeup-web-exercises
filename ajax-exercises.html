@@ -16,6 +16,23 @@
     dd {
       text-decoration: underline;
     }
+
+    {
+        orderNumber: 1;
+        itemOrdered: DrJ Jersey;
+        orderedBy: Magic Johnson;
+    }
+    {
+        orderNumber: 2;
+        itemOrdered: LeBron James Jersey;
+        orderedBy: Chris Paul;
+    }
+    {
+        orderNumber: 3;
+        itemOrdered: David Robinson Jersey;
+        orderedBy: Karl Malone;
+    }
+
   </style>
   <section>
      <h3>Order #x</h3>
@@ -25,6 +42,20 @@
              <dt>Item Ordered By</dt>
              <dd>Magic Johnson</dd>
          </dl>
+      <h3>Order #x</h3>
+      <dl>
+          <dt>Item Ordered</dt>
+          <dd>LeBron James Jersey</dd>
+          <dt>Item Ordered By</dt>
+          <dd>Chris Paul</dd>
+      </dl>
+      <h3>Order #x</h3>
+      <dl>
+          <dt>Item Ordered</dt>
+          <dd>David Robinson Jersey</dd>
+          <dt>Item Ordered By</dt>
+          <dd>Karl Malone</dd>
+      </dl>
   </section>
 </head>
 <body>
@@ -46,7 +77,7 @@
                ' <h3>Order #' + orders[i].orderNumber + '</h3>\n' +
                 '         <dl>\n' +
                 '             <dt>Item Ordered</dt>\n' +
-                '             <dd>Dr.J Jersey</dd>\n' +
+                '             <dd>DrJ Jersey</dd>\n' +
                 '             <dt>Item Ordered By</dt>\n' +
                 '             <dd>Kobe Bryant</dd>\n' +
                 '             </dl>' +
