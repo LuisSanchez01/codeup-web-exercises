@@ -31,6 +31,9 @@
         'Item Ordered': David Robinson Jersey;
         'Ordered By': Karl Malone;
     }
+    #update {
+        color: yellow;
+    }
 
 
   </style>
@@ -70,12 +73,7 @@
   $(document).ready(function() {
     "use strict";
 
-
-
-
-
-
-    function createHTML(orders) {
+      function createHTML(orders) {
         orders[i].orderNumber = undefined;
         var html = '';
       for (var i = 0; i < orders.length; i += 1) {
@@ -105,6 +103,11 @@
       }
       $('#orders').html(html);
     }
+
+    $('li').last(function (index, element) {
+        .css('background-color', 'yellow')
+        .css('font-weight', 'bold')
+    })
 
 
     function updatePage() {
