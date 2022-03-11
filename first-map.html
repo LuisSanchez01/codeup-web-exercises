@@ -9,7 +9,7 @@
 
 <div id="map" style="width: 400px; height: 300px;"></div>
 
-
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 
 
@@ -25,12 +25,12 @@
 
     mapboxgl.accessToken = MAPBOX_API_TOKEN;
 
-    const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
-        center: [-106.4850, 31.7619, ], // starting position [lng, lat]
-        zoom: 12 // starting zoom
-    });
+    // const map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+    //     center: [-106.4850, 31.7619, ], // starting position [lng, lat]
+    //     zoom: 12 // starting zoom
+    // });
 
     // setTimeout(function () {
     //     map.setCenter([39.8283, 98.5795]);
@@ -66,6 +66,26 @@
     // marker.setPopup(popup);
 
     console.log(MAPBOX_API_TOKEN);
+
+//    Geocoding and Reverse Geocoding
+
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+        center: [ -98.4936, 29.4241], // starting position [lng, lat]
+        zoom: 11 // starting zoom
+    });
+
+    geocode("The Alamo San Antonio", MAPBOX_API_TOKEN).then(function(data) {
+        console.log(data);
+    })
+
+
+
+
+
+
+
 
 </script>
 
