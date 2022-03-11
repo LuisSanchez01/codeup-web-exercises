@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Map</title>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+<div id="map" style="width: 400px; height: 300px;"></div>
+
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+
+
+<script src="js/keys.js"></script>
+<script>
+    // Mini - Exercise 1 (before markers)
+    //
+    // In this file, create a Mapbox map that shows your home town. After 5 seconds, have the map
+    // automatically change to a map of the entire United States using a satellite style.
+    // setTimeOut
+
+    "use strict";
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+        center: [-106.4850, 31.7619 ], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
+
+    // setTimeout(function () {
+    //     map.setCenter([39.8283, 98.5795]);
+    //     map.setZoom();
+    //     map.setStyle
+    // })
+
+
+
+    // var marker = new mapboxgl.Marker()
+    //     .setLnglat([])
+    //     .addTo(map);
+
+    // Create a marker for restaurant and add a popup
+
+    // var map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+    //     center: [ 106.4451, 31.8070], // starting position [lng, lat]
+    //     zoom: 12 // starting zoom
+    // });
+
+    // Create a marker
+    // var marker = new mapboxgl.Marker()
+    // .setLngLat([ 106.4451, 31.8070])
+    // .addTo(map);
+
+    // Create a pop-up
+    // var popup = new mapboxgl.Popup()
+    //     .setLngLat([106.4451, 31.8070 ])
+    //     .setHTML("<p>Good Food</p>")
+    //     .addTo(map)
+    // marker.setPopup(popup);
+
+    console.log(MAPBOX_API_TOKEN);
+
+</script>
+
+</body>
+</html>
