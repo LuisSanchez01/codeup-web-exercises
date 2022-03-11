@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Map</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+<div id="map" style="width: 400px; height: 300px;"></div>
+
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+
+
+<script src="js/keys.js"></script>
+<script>
+
+    "use strict";
+    // Mini - Exercise 4 (before final exercise)
+    //
+    // Create an HTML file called mapbox-4.html centered on San Antonio that programmatically is re-centered over
+    // Zion National Park using the coordinates of the park by geocoding the physical address.
+    //
+    //     Add the latitude and longitude of Honolulu, Hawaii and use reverse geocoding to move the map to this location
+    // by geocoding inside of the reverseGeocode function.
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+        center: [ -98.4936, 29.4241], // starting position [lng, lat]
+        zoom: 11 // starting zoom
+    });
+
+
+
+    geocode("Zion national Park, Utah", MAPBOX_API_TOKEN).then(function(data) {
+        console.log(data);
+    })
+
+    var lng = 113.0263;
+    var lat = 37.2982;
+
+    // Reverse Geocoding
+    reverseGeocode({lng: 157.8583, lat: 21.3069}, MAPBOX_API_TOKEN).then(function(data) {
+        console.log(data);
+    });
+
+
+
+    // Create a marker
+    // var marker = new mapboxgl.Marker()
+    //     .setLngLat([ -77.0502, 38.8893])
+    //     .addTo(map);
+    //
+    // // Create a pop-up
+    // var popup = new mapboxgl.Popup()
+    //     .setLngLat([-77.0502, 38.8893 ])
+    //     .setHTML("<p>Lincoln Memorial</p><h1></h1>")
+    //     .addTo(map)
+    // marker.setPopup(popup);
+
+        console.log(MAPBOX_API_TOKEN);
+
+</script>
+
+</body>
+</html>

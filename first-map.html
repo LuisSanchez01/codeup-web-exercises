@@ -80,7 +80,12 @@
         console.log(data);
     })
 
+    var long = -95.5555;
+    var lat = 33.6618;
 
+    reverseGeocode({lng: long, lat: lat}, MAPBOX_API_TOKEN).then(function (data) {
+        console.log(data);
+    })
 
 
 
