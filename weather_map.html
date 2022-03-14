@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<h1>Weather Map</h1>
+<div id="map" style="width: 600px; height: 500px;"></div>
+
+
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+
+<script>
+    "use strict";
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+        center: [-98.4936, 29.4241 ], // starting position [lng, lat]
+        zoom: 11 // starting zoom
+    });
+
+    // Create a marker
+    // var marker = new mapboxgl.Marker()
+    //     .setLngLat([-106.2982, 31.7686])
+    //     .addTo(map);
+    //
+    // // Create a pop-up
+    // var popup = new mapboxgl.Popup()
+    //     .setLngLat([ -106.2982, 31.7686])
+    //     .setHTML('<p>Chicos Tacos <br> 11381 Montwood Dr, El Paso, TX 79936</p>')
+    //     .addTo(map)
+    // marker.setPopup(popup);
+
+    console.log(MAPBOX_API_TOKEN);
+
+</script>
+
+</body>
+</html>
