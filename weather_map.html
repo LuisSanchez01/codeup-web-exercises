@@ -7,19 +7,66 @@
 </head>
 <body>
 <h1>Weather Map</h1>
-<div id="map" style="width: 600px; height: 500px;"></div>
+<div id="map" style="width: 1255px; height: 400px;"></div>
 
 
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
+<script src="css/weather_map.css"></script>
 <script
         src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
 
+<button type="button">Temp Conversion</button>
+
+
+
 <script>
     "use strict";
+
+
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+
+            var latitude = position.coords.latitude
+            var longitude = position.coords.longitude
+
+            $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon" + longitude + "&appid=44d74bc900149031323fd12ea6bdb3d6", function (a) {
+            //    to show current condition
+                var cel = Math.round(a.main.temp - 273);
+
+                $('#location').html(a.name + ", " + a.sys.country);
+                $('weather').html('<img src =' + "https://openweathermap.org/img/w/" + a.weather[0].icon + ".png" + '>' + a.weather[0].description);
+                $('#temp').html(cel);
+                $('#mic').html("Humidity " + a.main.humidity + "%");
+
+            //    to change Celsius to Fahrenheit
+                $('#fh').click(function () {
+                    $('#cl').removeClass('cf');
+                    $(this).addClass('cf');
+                    $('#temp').html(Math.round(cel*1.8+32));
+                })
+
+                $('#cl').click(function () {
+                    $('fh').removeClass('cf');
+                    $(this).addClass('cf');
+                    $('temp').html(cel);
+                })
+            });
+
+        //    to show the current date and time
+            var current = $.now();
+            var maxDate = new Date(current);
+            var currentDate = maxDate.toString();
+            $('#date').html(currentDate);
+
+        });
+    }
+
+
 
     mapboxgl.accessToken = MAPBOX_API_TOKEN;
 
@@ -31,20 +78,36 @@
     });
 
     // Create a marker
-    // var marker = new mapboxgl.Marker()
-    //     .setLngLat([-106.2982, 31.7686])
-    //     .addTo(map);
-    //
-    // // Create a pop-up
-    // var popup = new mapboxgl.Popup()
-    //     .setLngLat([ -106.2982, 31.7686])
-    //     .setHTML('<p>Chicos Tacos <br> 11381 Montwood Dr, El Paso, TX 79936</p>')
-    //     .addTo(map)
-    // marker.setPopup(popup);
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-98.4936, 29.4241])
+        .addTo(map);
+
+
+    $.get('https://api.openweathermap.org/data/2.5/onecall', {
+        lat:29.4252,
+        lon: -98.4916,
+        appid: WEATHER_TOKEN,
+        exclude: 'minutely,hourly,current,alerts',
+        units: 'imperial'
+    }).done(function(data) {
+        console.log(data);
+
+
+        // log 63 from humidity
+
+        console.log(data.daily[0].feels_like);
+    }).fail(function (jqXhr, status, error) {
+        console.log(jqXhr);
+        console.log(status);
+        console.log(error);
+    });
+
 
     console.log(MAPBOX_API_TOKEN);
 
 </script>
+
+
 
 </body>
 </html>
