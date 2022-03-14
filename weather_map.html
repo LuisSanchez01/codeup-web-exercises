@@ -7,12 +7,16 @@
 </head>
 <body>
 <h1>Weather Map</h1>
+<div>
+    <div id="weatherCard"></div>
+</div>
 <div id="map" style="width: 1255px; height: 400px;"></div>
 
 
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
+
 <script src="css/weather_map.css"></script>
 <script
         src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -56,8 +60,8 @@
     //                 $('temp').html(cel);
     //             })
     //         });
-    //
-    //     //    to show the current date and time
+
+        //    to show the current date and time
     //         var current = $.now();
     //         var maxDate = new Date(current);
     //         var currentDate = maxDate.toString();
@@ -87,15 +91,15 @@
         lat:29.4252,
         lon: -98.4916,
         appid: WEATHER_TOKEN,
-        exclude: 'minutely,hourly,current,alerts',
+        exclude: 'minutely,hourly,alerts',
         units: 'imperial'
     }).done(function(data) {
+        renderWeather(data);
         console.log(data);
 
 
-        // log 63 from humidity
+        // console.log(data.daily[0].feels_like);
 
-        console.log(data.daily[0].feels_like);
     }).fail(function (jqXhr, status, error) {
         console.log(jqXhr);
         console.log(status);
@@ -103,7 +107,30 @@
     });
 
 
+    function renderWeather(weather) {
+        var html = '<div class="weather">';
+        // html += '<div>' + coffee.id + '</div>';
+        html += '<p>' + weather.current.temp + '</p>';
+        html += '<p>' + weather.daily[i].feels_like + '</p>';
+        html += '<p>' + weather.daily[i].clouds + '</p>';
+        html += '</div>';
+$('#weatherCard').html(html);
+        // return html;
+    }
+
+    function renderObjects(objects) {
+        var html = '';
+        for(var i = 0; i <= 5; i++) {
+            html += renderWeather(objects[i]);
+        }
+        $('#weatherCard').html(html);
+    }
+
+
     console.log(MAPBOX_API_TOKEN);
+
+
+
 
 </script>
 
