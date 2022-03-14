@@ -2,9 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>First Map</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
+
+<div id="map" style="width: 400px; height: 300px;"></div>
+
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+
+
+<script src="js/keys.js"></script>
+<script>
+
+    "use strict";
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+        center: [-77.0369, 38.9072 ], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
+
+    // Create a marker
+    var marker = new mapboxgl.Marker()
+        .setLngLat([ -77.0502, 38.8893])
+        .addTo(map);
+
+    // Create a pop-up
+    var popup = new mapboxgl.Popup()
+        .setLngLat([<!DOCTYPE html>
+    <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <title>First Map</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+    </head>
+    <body>
+
+    <div id="map" style="width: 400px; height: 300px;"></div>
+
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+
+
+<script src="js/keys.js"></script>
+<script>
+
+    "use strict";
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+        center: [-77.0369, 38.9072 ], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
+
+    // Create a marker
+    var marker = new mapboxgl.Marker()
+        .setLngLat([ -77.0502, 38.8893])
+        .addTo(map);
+
+    // Create a pop-up
+    var popup = new mapboxgl.Popup()
+        .setLngLat([-77.0502, 38.8893 ])
+        .setHTML("<p>Lincoln Memorial</p>")
+        .addTo(map)
+    marker.setPopup(popup);
+
+    // Mini - Exercise 3
+    //
+    // Create an HTML file called mapbox-3.html and copy your code over from mapbox-2. Add a popup to the Lincoln
+    // Memorial marker that contains the text "Lincoln Memorial"
+
+    console.log(MAPBOX_API_TOKEN);
+
+</script>
+
+</body>
+</html> ])
+        .setHTML("<p>Lincoln Memorial</p>")
+        .addTo(map)
+    marker.setPopup(popup);
+
+    // Mini - Exercise 3
+    //
+    // Create an HTML file called mapbox-3.html and copy your code over from mapbox-2. Add a popup to the Lincoln
+    // Memorial marker that contains the text "Lincoln Memorial"
+
+    console.log(MAPBOX_API_TOKEN);
+
+</script>
 
 </body>
 </html>

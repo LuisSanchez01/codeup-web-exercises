@@ -187,15 +187,15 @@
     //
     //     Examples...
 
-  function returnStringObject(str) {
-         return {
-    stringValue: str,
-    stringArray: str.split('')
-       }
-}
-
-console.log(returnStringObject('hello'));
-     console.log(returnStringObject('codeup'));
+//   function returnStringObject(str) {
+//          return {
+//     stringValue: str,
+//     stringArray: str.split('')
+//        }
+// }
+//
+// console.log(returnStringObject('hello'));
+//      console.log(returnStringObject('codeup'));
 
     // returnStringObject('hello') // returns...
     //
@@ -211,6 +211,22 @@ console.log(returnStringObject('hello'));
     //         stringArray: ['c', 'o', 'd', 'e', 'u', 'p']
     // }
 
+    // Write a function, countNegatives, and takes in an array of integers and returns the total number of negative
+    // numbers. 0 should be considered a non-negative number. If no negative numbers are present, return 0.
+    function countNegatives(input){
+        var neg = input.filter(element => element < 0);
+        return neg.length;
+    }
+
+    var nums1 = [-5, 10, 2, 5]; // countNegatives(nums1) returns 1
+    var nums2 = [1, -10, -2, 5]; // countNegatives(nums2) returns 2
+    var nums3 = [3, 10, 2, 5]; // countNegatives(nums3) returns 0
+    var nums4 = [-3, -10]; // countNegatives(nums4) returns 2
+
+    console.log(countNegatives([-5, 10, 2, 5]));
+    console.log(countNegatives([1, -10, -2, 5]));
+    console.log(countNegatives([3, 10, 2, 5]));
+    console.log(countNegatives([-3, -10]));
 
 
 </script>
