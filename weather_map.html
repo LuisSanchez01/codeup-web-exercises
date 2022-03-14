@@ -28,43 +28,43 @@
 
 
 
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-
-            var latitude = position.coords.latitude
-            var longitude = position.coords.longitude
-
-            $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon" + longitude + "&appid=44d74bc900149031323fd12ea6bdb3d6", function (a) {
-            //    to show current condition
-                var cel = Math.round(a.main.temp - 273);
-
-                $('#location').html(a.name + ", " + a.sys.country);
-                $('weather').html('<img src =' + "https://openweathermap.org/img/w/" + a.weather[0].icon + ".png" + '>' + a.weather[0].description);
-                $('#temp').html(cel);
-                $('#mic').html("Humidity " + a.main.humidity + "%");
-
-            //    to change Celsius to Fahrenheit
-                $('#fh').click(function () {
-                    $('#cl').removeClass('cf');
-                    $(this).addClass('cf');
-                    $('#temp').html(Math.round(cel*1.8+32));
-                })
-
-                $('#cl').click(function () {
-                    $('fh').removeClass('cf');
-                    $(this).addClass('cf');
-                    $('temp').html(cel);
-                })
-            });
-
-        //    to show the current date and time
-            var current = $.now();
-            var maxDate = new Date(current);
-            var currentDate = maxDate.toString();
-            $('#date').html(currentDate);
-
-        });
-    }
+    // if (navigator.geolocation) {
+    //     navigator.geolocation.getCurrentPosition(function(position) {
+    //
+    //         var latitude = position.coords.latitude
+    //         var longitude = position.coords.longitude
+    //
+    //         $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon" + longitude + "&", function (a) {
+    //         //    to show current condition
+    //             var cel = Math.round(a.main.temp - 273);
+    //
+    //             $('#location').html(a.name + ", " + a.sys.country);
+    //             $('weather').html('<img src =' + "https://openweathermap.org/img/w/" + a.weather[0].icon + ".png" + '>' + a.weather[0].description);
+    //             $('#temp').html(cel);
+    //             $('#mic').html("Humidity " + a.main.humidity + "%");
+    //
+    //         //    to change Celsius to Fahrenheit
+    //             $('#fh').click(function () {
+    //                 $('#cl').removeClass('cf');
+    //                 $(this).addClass('cf');
+    //                 $('#temp').html(Math.round(cel*1.8+32));
+    //             })
+    //
+    //             $('#cl').click(function () {
+    //                 $('fh').removeClass('cf');
+    //                 $(this).addClass('cf');
+    //                 $('temp').html(cel);
+    //             })
+    //         });
+    //
+    //     //    to show the current date and time
+    //         var current = $.now();
+    //         var maxDate = new Date(current);
+    //         var currentDate = maxDate.toString();
+    //         $('#date').html(currentDate);
+    //
+    //     });
+    // }
 
 
 
