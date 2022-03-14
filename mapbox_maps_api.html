@@ -1,103 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>First Map</title>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
-</head>
-<body>
-
-<div id="map" style="width: 400px; height: 300px;"></div>
-
-
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
-
-
-<script src="js/keys.js"></script>
-<script>
-
-    "use strict";
-
-    mapboxgl.accessToken = MAPBOX_API_TOKEN;
-
-    const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
-        center: [-77.0369, 38.9072 ], // starting position [lng, lat]
-        zoom: 12 // starting zoom
-    });
-
-    // Create a marker
-    var marker = new mapboxgl.Marker()
-        .setLngLat([ -77.0502, 38.8893])
-        .addTo(map);
-
-    // Create a pop-up
-    var popup = new mapboxgl.Popup()
-        .setLngLat([<!DOCTYPE html>
-    <html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
         <head>
         <meta charset="UTF-8">
-        <title>First Map</title>
+        <title>Mapbox Maps API</title>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
     </head>
     <body>
-
-    <div id="map" style="width: 400px; height: 300px;"></div>
-
-
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+     <h1>Mapbox Maps API</h1>
+    <div id="map" style="width: 600px; height: 500px;"></div>
 
 
-<script src="js/keys.js"></script>
+
+
+<script src="js/mapbox-geocoder-utils.js"></script>
+     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+     <script src="js/keys.js"></script>
+
 <script>
-
     "use strict";
+
+    var restaurants = [
+        {
+            "name": "Chicos Tacos",
+            "address": "11381 Montwood Dr, El Paso, TX 79936",
+            "phone number": "915-849-8777",
+        },
+        {
+            "name": "Burger Boy",
+            "address": "9334 Potranco Rd, San Antonio, TX 78245",
+            "phone number": "210-849-8777"
+        },
+        {
+            "name": "Wendy's",
+            "address": "9307 Potranco Rd, San Antonio, TX 78251",
+            "phone number": "210-397-8777"
+        }
+    ];
+
+
+
 
     mapboxgl.accessToken = MAPBOX_API_TOKEN;
 
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
-        center: [-77.0369, 38.9072 ], // starting position [lng, lat]
-        zoom: 12 // starting zoom
+        center: [-106.2982, 31.7686 ], // starting position [lng, lat]
+        zoom: 19 // starting zoom
     });
+    // to display the three restaurants
+
+
+
+    // restaurants.forEach(function (restaurant) {
+    // geocode(restaurant.address, MAPBOX_API_TOKEN).then(function (results) {
+    //     // map.setCenter(results);
+    //     // console.log(results);
+    //     var popup = new mapboxgl.Popup()
+    //         .setHTML('<h3>' + restaurant.name + '</h3>' + '<a href="' + restaurant.address + '">'Address'</a>)
+    //     var marker = new mapboxgl.Marker()
+    //     .setLngLat(results)
+    //     .addTo(map);
+    // })
+
+    // to click add JQuery link, add a button, and an event listener
+    // $('#zoom-btn').click(function() {
+    // map.setZoom(19);
+    // });
 
     // Create a marker
-    var marker = new mapboxgl.Marker()
-        .setLngLat([ -77.0502, 38.8893])
-        .addTo(map);
-
-    // Create a pop-up
-    var popup = new mapboxgl.Popup()
-        .setLngLat([-77.0502, 38.8893 ])
-        .setHTML("<p>Lincoln Memorial</p>")
-        .addTo(map)
-    marker.setPopup(popup);
-
-    // Mini - Exercise 3
+    // var marker = new mapboxgl.Marker()
+    //     .setLngLat([-106.2982, 31.7686])
+    //     .addTo(map);
     //
-    // Create an HTML file called mapbox-3.html and copy your code over from mapbox-2. Add a popup to the Lincoln
-    // Memorial marker that contains the text "Lincoln Memorial"
+    // // Create a pop-up
+    // var popup = new mapboxgl.Popup()
+    //     .setLngLat([ -106.2982, 31.7686])
+    //     .setHTML('<p>Chicos Tacos <br> 11381 Montwood Dr, El Paso, TX 79936</p>')
+    //     .addTo(map)
+    // marker.setPopup(popup);
+
 
     console.log(MAPBOX_API_TOKEN);
 
-</script>
+    // function placeMarkerAndPopup(Chicos Tacos, MAPBOX_API_TOKEN, map) {
+    //     geocode(info.address, token).then(function(coordinates) {
+    //         var popup = new mapboxgl.Popup()
+    //             .setHTML('<h3>Chicos Tacos</h3>);
 
-</body>
-</html> ])
-        .setHTML("<p>Lincoln Memorial</p>")
-        .addTo(map)
-    marker.setPopup(popup);
-
-    // Mini - Exercise 3
+    //         var marker = new mapboxgl.Marker()
+    //             .setLngLat(coordinates)
+    //             .addTo(map)
+    //             .setPopup(popup);
+    //         popup.addTo(map);
+    //     });
+    // }
     //
-    // Create an HTML file called mapbox-3.html and copy your code over from mapbox-2. Add a popup to the Lincoln
-    // Memorial marker that contains the text "Lincoln Memorial"
+    // placeMarkerAndPopup(chicosInfo, accessToken, map);
 
-    console.log(MAPBOX_API_TOKEN);
 
 </script>
 
 </body>
 </html>
+
