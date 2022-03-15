@@ -6,72 +6,89 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
-<h1>Weather Map</h1>
-<div>
-    <div id="weatherCard"></div>
-</div>
+     <div class="container">
+       <div class="site-title">
+         <p>Weather</p>
+       </div>
+         <div class="notification"></div>
+         <div class="weather-container">
+             <div class="weather-icon">
+                 <img src="icons/unknown.png" alt="">
+             </div>
+             <div class="temperature-value"></div>
+             <p>- °<span>F</span></p>
+         </div>
+         <div class="temperature-description">
+            <p>-</p>
+         </div>
+         <div class="location">
+             <p>-</p>
+         </div>
+     </div>
+
 <div id="map" style="width: 1255px; height: 400px;"></div>
 
-
-<script src="js/mapbox-geocoder-utils.js"></script>
+     <script src="js/mapbox-geocoder-utils.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
+<script src="fonts/weather-icons.css"></script>
 
-<script src="css/weather_map.css"></script>
+     <script src="css/weather_map.css"></script>
 <script
         src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
 
-<button type="button">Temp Conversion</button>
-
-
-
-<script>
+<!--<button type="button">Temp Conversion</button>-->
+     <script>
     "use strict";
 
 
 
-    // if (navigator.geolocation) {
-    //     navigator.geolocation.getCurrentPosition(function(position) {
-    //
-    //         var latitude = position.coords.latitude
-    //         var longitude = position.coords.longitude
-    //
-    //         $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon" + longitude + "&", function (a) {
-    //         //    to show current condition
-    //             var cel = Math.round(a.main.temp - 273);
-    //
-    //             $('#location').html(a.name + ", " + a.sys.country);
-    //             $('weather').html('<img src =' + "https://openweathermap.org/img/w/" + a.weather[0].icon + ".png" + '>' + a.weather[0].description);
-    //             $('#temp').html(cel);
-    //             $('#mic').html("Humidity " + a.main.humidity + "%");
-    //
-    //         //    to change Celsius to Fahrenheit
-    //             $('#fh').click(function () {
-    //                 $('#cl').removeClass('cf');
-    //                 $(this).addClass('cf');
-    //                 $('#temp').html(Math.round(cel*1.8+32));
-    //             })
-    //
-    //             $('#cl').click(function () {
-    //                 $('fh').removeClass('cf');
-    //                 $(this).addClass('cf');
-    //                 $('temp').html(cel);
-    //             })
-    //         });
-
-        //    to show the current date and time
-    //         var current = $.now();
-    //         var maxDate = new Date(current);
-    //         var currentDate = maxDate.toString();
-    //         $('#date').html(currentDate);
-    //
-    //     });
-    // }
 
 
 
+
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(function(position) {
+//
+//             var latitude = position.coords.latitude
+//             var longitude = position.coords.longitude
+//
+//             $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon" + longitude + "&", function (a) {
+//             //    to show current condition
+//                 var cel = Math.round(a.main.temp - 273);
+//
+//                 $('#location').html(a.name + ", " + a.sys.country);
+//                 $('weather').html('<img src =' + "https://openweathermap.org/img/w/" + a.weather[0].icon + ".png" + '>' + a.weather[0].description);
+//                 $('#temp').html(cel);
+//                 $('#mic').html("Humidity " + a.main.humidity + "%");
+//
+//             //    to change Celsius to Fahrenheit
+//                 $('#fh').click(function () {
+//                     $('#cl').removeClass('cf');
+//                     $(this).addClass('cf');
+//                     $('#temp').html(Math.round(cel*1.8+32));
+//                 })
+//
+//                 $('#cl').click(function () {
+//                     $('fh').removeClass('cf');
+//                     $(this).addClass('cf');
+//                     $('temp').html(cel);
+//                 })
+//             });
+//
+//            // to show the current date and time
+//             var current = $.now();
+//             var maxDate = new Date(current);
+//             var currentDate = maxDate.toString();
+//             $('#date').html(currentDate);
+//
+//         });
+//     }
+//
+//
+//
     mapboxgl.accessToken = MAPBOX_API_TOKEN;
 
     const map = new mapboxgl.Map({
@@ -85,8 +102,8 @@
     var marker = new mapboxgl.Marker()
         .setLngLat([-98.4936, 29.4241])
         .addTo(map);
-
-
+//
+//
     $.get('https://api.openweathermap.org/data/2.5/onecall', {
         lat:29.4252,
         lon: -98.4916,
@@ -111,8 +128,8 @@
         var html = '<div class="weather">';
         // html += '<div>' + coffee.id + '</div>';
         html += '<p>' + weather.current.temp + '</p>';
-        html += '<p>' + weather.daily[i].feels_like + '</p>';
-        html += '<p>' + weather.daily[i].clouds + '</p>';
+        html += '<p>' + weather.current.feels_like + '</p>';
+        html += '<p>' + weather.current.clouds + '</p>';
         html += '</div>';
 $('#weatherCard').html(html);
         // return html;
