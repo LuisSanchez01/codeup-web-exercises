@@ -302,6 +302,14 @@
        };
     }
 
+    function capitalizeName() {
+        var nameObject = convertNameToObject(name);
+        return nameObject.firstName.charAt(0).toUpperCase() + nameObject.firstName.substring(1)
+            + ''
+            + nameObject.lastName.charAt(0).toUpperCase() + nameObject.lastName.substring(1);
+    }
+
+
 
 </script>
 </body>
