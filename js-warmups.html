@@ -270,6 +270,37 @@
     // }
     // ];
 
+    // remove9s in second assessment
+    // function remove9s(nums){
+    //     create an output array
+    //     var output = [];
+    // //    loop through the input array and add non-nines to the output array
+    //     nums.forEach(function (num){
+    //         if (num === 9){
+    //         //    do nothing
+    //         } else {
+    //             output.push(num);
+    //         }
+    //     });
+    // //    return the output array
+    //     return output;
+    // }
+
+    function convertNameToObject(name){
+        var namesArray = name.split('');
+        return {
+            firstName: name.split('')[0],
+            lastName: name.split('')[1],
+        };
+    }
+
+    function analyzeWord(string) {
+       return {
+           word: string,
+           numberOfLetters: string.length,
+           numberOfVowels: countVowels(string),
+       };
+    }
 
 
 </script>
