@@ -14,6 +14,12 @@
 <div class="row">
     <div id="weatherCard"></div>
 </div>
+
+    <form>
+        <input id="search" placeholder="Enter Location">
+        <button type="submit">Search</button>
+    </form>
+
 <div id="date"></div>
 <div id="map" style="width: 1255px; height: 400px;"></div>
 
@@ -24,7 +30,8 @@
         src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
-
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 
 
 
@@ -81,6 +88,13 @@
                     zoom: 11 // starting zoom
                 });
 
+    // Add the control to the map.
+    // map.addControl(
+    //     new MapboxGeocoder({
+    //         accessToken: MAPBOX_API_TOKEN,
+    //         mapboxgl: mapboxgl
+    //     })
+    // );
                 // CREATE A MARKER
                 var marker = new mapboxgl.Marker()
                     .setLngLat([-98.4936, 29.4241])
@@ -113,7 +127,7 @@
                     for (var i = 0; i < 5; i++) {
                         html += '<div class="weather">';
                         // html += '<div>' + coffee.id + '</div>';
-                        html += '<p>' + weather.daily[i].temp.day + '</p>';
+                        html += '<p>' + "Temperature  " + weather.daily[i].temp.day + '</p>';
                         html += '<p>' + weather.daily[i].feels_like.day + '</p>';
                         html += '<p>' + weather.daily[i].clouds + '</p>';
                         html += '<img src="http://openweathermap.org/img/wn/' + weather.daily[i].weather[0].icon + '@2x.png">';
@@ -122,6 +136,7 @@
                     $('#weatherCard').html(html);
                     // return html;
                 }
+
 
 </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

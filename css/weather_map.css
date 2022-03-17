@@ -11,10 +11,13 @@ html {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    border: 5px solid;
 }
 h1 {
 
 }
+
+
 
 
 
