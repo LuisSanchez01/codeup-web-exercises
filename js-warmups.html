@@ -7,14 +7,39 @@
         integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous">
 </script>
+     <style>
+          #square {
+              width: 200px;
+              height: 200px;
+              background-color: gray;
+          }
+     </style>
  </head>
 <body>
+<div id="square"></div>
+<button id="changeColor">Change Color</button>
+<button id="reset">Reset</button>
+<!--    <script>-->
+
+<!--        const btn = document.querySelector('button');-->
+
+<!--        function random(number) {-->
+<!--            return Math.floor(Math.random() * (number+1));-->
+<!--        }-->
+
+<!--        btn.onclick = function() {-->
+<!--            const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';-->
+<!--            document.body.style.backgroundColor = rndCol;-->
+<!--        }-->
+
+<!--</script>-->
 <script>
     // <h1>Good morning!</h1>
 // <form>
 // // <button>Press if after 12pm</button>
 //
 // </form>
+
 
 // ================================= WARM UP
 //
@@ -286,28 +311,38 @@
     //     return output;
     // }
 
-    function convertNameToObject(name){
-        var namesArray = name.split('');
-        return {
-            firstName: name.split('')[0],
-            lastName: name.split('')[1],
-        };
-    }
+    // function convertNameToObject(name){
+    //     var namesArray = name.split('');
+    //     return {
+    //         firstName: name.split('')[0],
+    //         lastName: name.split('')[1],
+    //     };
+    // }
 
-    function analyzeWord(string) {
-       return {
-           word: string,
-           numberOfLetters: string.length,
-           numberOfVowels: countVowels(string),
-       };
-    }
+    // function analyzeWord(string) {
+    //    return {
+    //        word: string,
+    //        numberOfLetters: string.length,
+    //        numberOfVowels: countVowels(string),
+    //    };
+    // }
+    //
+    // function capitalizeName() {
+    //     var nameObject = convertNameToObject(name);
+    //     return nameObject.firstName.charAt(0).toUpperCase() + nameObject.firstName.substring(1)
+    //         + ''
+    //         + nameObject.lastName.charAt(0).toUpperCase() + nameObject.lastName.substring(1);
+    // }
 
-    function capitalizeName() {
-        var nameObject = convertNameToObject(name);
-        return nameObject.firstName.charAt(0).toUpperCase() + nameObject.firstName.substring(1)
-            + ''
-            + nameObject.lastName.charAt(0).toUpperCase() + nameObject.lastName.substring(1);
-    }
+var changeColorButton = document.getElementById('changeColor');
+changeColorButton.addEventListener('click', function (){
+   document.getElementById('square').style.backgroundColor = 'purple';
+});
+var resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', function (){
+    document.getElementById('square').style.backgroundColor = 'gray';
+});
+
 
 
 
