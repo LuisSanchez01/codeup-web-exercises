@@ -271,57 +271,60 @@
 //     numberOfLogins: 100
 // }
 
-var users = [
-    {
-        username: 'fsmith',
-        email: 'fsmith@email.com',
-        numberOfLogins: 23
-    },
-    {
-        username: 'ksmith',
-        email: 'ksmith@email.com',
-        numberOfLogins: 100
-    },
-    {
-        username: 'lsmith',
-        email: 'lsmith@email.com',
-        numberOfLogins: 10
-    },
+// var users = [
+//     {
+//         username: 'fsmith',
+//         email: 'fsmith@email.com',
+//         numberOfLogins: 23
+//     },
+//     {
+//         username: 'ksmith',
+//         email: 'ksmith@email.com',
+//         numberOfLogins: 100
+//     },
+//     {
+//         username: 'lsmith',
+//         email: 'lsmith@email.com',
+//         numberOfLogins: 10
+//     },
+//
+// ];
+//
+// function returnFirstUser(users){
+//     return users[0];
+// }
+//
+// console.log(returnFirstUser(users));
+//
+//
+// function returnTotalUserLogins(users){
+//     var total = 0;
+//     for (var i = 0; i < users.length; i += 1) {
+//         console.log(users[i].numberOfLogins);
+//         total += users[i].numberOfLogins;
+//     }
+//         // commented out to show the forEach route below
+// //     users.forEach(function (users)
+// //     total += user.numberOfLogins;
+// // });
+//     return total;
+// }
+//
+// console.log(returnTotalUserLogins(users));
+//
+// function returnMostFrequentUser(users){
+//     var mostFrequentUser = {
+//         numberOfLogins: 0
+//     };
+//     users.forEach(function(user){
+//         if (user.numberOfLogins > mostFrequentUser.numberOfLogins) {
+//         mostFrequentUser = user
+//         }
+//     });
+// return mostFrequentUser;
+// }
+//
+// console.log(returnMostFrequentUser(users));
 
-];
-
-function returnFirstUser(users){
-    return users[0];
-}
-
-console.log(returnFirstUser(users));
 
 
-function returnTotalUserLogins(users){
-    var total = 0;
-    for (var i = 0; i < users.length; i += 1) {
-        console.log(users[i].numberOfLogins);
-        total += users[i].numberOfLogins;
-    }
-        // commented out to show the forEach route below
-//     users.forEach(function (users)
-//     total += user.numberOfLogins;
-// });
-    return total;
-}
-
-console.log(returnTotalUserLogins(users));
-
-function returnMostFrequentUser(users){
-    var mostFrequentUser = {
-        numberOfLogins: 0
-    };
-    users.forEach(function(user){
-        if (user.numberOfLogins > mostFrequentUser.numberOfLogins) {
-        mostFrequentUser = user
-        }
-    });
-return mostFrequentUser;
-}
-
-console.log(returnMostFrequentUser(users));
