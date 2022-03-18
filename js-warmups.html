@@ -528,17 +528,116 @@
     console.log("bestDog:", bestDog);
 
 
-
     // REDUCE
+    // TODO: Get the sum of all favorite  numbers
 
+    // const favoriteSum = favoriteNumbers.reduce((previousValue, currentValue) => previousValue+currentValue)
+    //
+    //
+    // console.log("favoriteSum:", favoriteSum)
+
+    // const favoriteSum = favoriteNumbers.reduce((previousValue, currentValue, index) => {
+    //     // console.log("index :", index);
+    //     return previousValue+currentValue
+    // }, 0);
+    //
+    // console.log("favoriteSum:", favoriteSum)
+    //
+    // //TODO:
+    //
+    // const title = 'Full Cats HTML'
+    // const fullCatsHTML = myCats
+    //     .map(mapElementToLI)
+    //     .reduce((previousValue, currentValue) => previousValue + currentValue, `<h2>${title}</h2><ul>`) + "</ul>"
+    //
+    // console.log("fullCatsHTML:", fullCatsHTML)
+    //
+    //
+    // document.getElementsByTagName("body")[0].innerHTML += fullCatsHTML
+    //
+    //
+    //
+    // // TODO: Create a rollup report that contians the total # of TV Shows, the average IMDB SCORE,
+    // //  and the all the starting years for the shows
+    //
+    //
+    // const initialValue = {
+    //     totalTVShows: 0,
+    //     avgIMDBScore:  0,
+    //     startingYears: []
+    // }
+    //
+    // const getTVShowsReport = (previousValue, currentValue, index) => {
+    //
+    //     let {totalTVShows, avgIMDBScore, startingYears} = previousValue;
+    //
+    //     avgIMDBScore = ((avgIMDBScore * index ) + currentValue.imdbScore) / (index + 1);
+    //
+    //     startingYears.push(currentValue.firstEpisodeYear)
+    //
+    //
+    //     return {
+    //         totalTVShows: totalTVShows + 1,
+    //         avgIMDBScore,
+    //         startingYears
+    //     }
+    // }
+    //
+    // const tvShowReport = arrayOfTVShows.reduce(getTVShowsReport,initialValue);
+    //
+    // console.log("tvShowReport:", tvShowReport);
+    //
+    // const report = [tvShowReport]
+    //     .map((item) => {
+    //         console.log("item :", item);
+    //
+    //         const yearsMap = (item, index, array) =>  `<span>${item}</span>${(index < (array.length - 1)) ? "," : "." } `
+    //
+    //         return `
+    //     <h2>TV Show Report</h2>
+    //        <div>
+    //         <div>Total TV shows: ${item.totalTVShows}</div>
+    //         <div>Avg IMDB Score: ${item.avgIMDBScore}</div>
+    //         <div>Starting years: ${item.startingYears.map(yearsMap).join("")}</div>
+    //     </div>
+    //     `
+    //     })
+    //
+    // console.log("report:", report)
+    //
+    // document.getElementsByTagName("body")[0].innerHTML += report
     // TODO 7: using reduce, return a string containing all dog names together with no spaces ("BubblesLexieDoggy...")
-    console.log('Exercise 7:');
+    // console.log('Exercise 7:');
+    const dogNamesSum = dogNames.reduce((previousValue, currentValue) => previousValue+currentValue)
+
+    console.log("dogNamesSum:", dogNamesSum);
 
     // TODO 8: using reduce, return the total of adding all dog ages together (18)
-    console.log('Exercise 8:');
+    // console.log('Exercise 8:');
+    const dogAgesSum = dogAges.reduce((previousValue, currentValue) => previousValue+currentValue)
+
+    console.log("dogAgesSum:", dogAgesSum);
 
     // TODO 9: using reduce, return an array of dog objects with all isTrained properties set to true
-    console.log('Exercise 9:');
+    // console.log('Exercise 9:');
+    const trainedDogs = dogs.reduce((previousValue, currentValue) => {
+        if (currentValue.isTrained) previousValue.push(currentValue)
+
+        return previousValue
+    },[])
+
+    console.log("trainedDogs", trainedDogs);
+
+    const allDogsTrained = dogs.reduce((previousValue, currentValue) => {
+        previousValue.push({
+            ...currentValue,
+            isTrained: true
+        })
+
+        return previousValue;
+    },[])
+
+    console.log("allDogsTrained :", allDogsTrained);
 
 
     // EXTRA CHALLENGES
