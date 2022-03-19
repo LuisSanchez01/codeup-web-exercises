@@ -56,23 +56,33 @@ console.log("usersEmail:", usersEmail)
 const usersYearsOfExperienceSum = users.reduce((total, user) => {
     return total + user.yearsOfExperience;
 }, 0);
+// const averageYears = users.reduce((usersYearsOfExperienceSum, num) => {
+//     return usersYearsOfExperienceSum / 5;
+// })
+const array = [5, 6, 7, 8, 9]
+     const average = array.reduce(function (avg, value, _, { length }) {
+        return avg + value/ length;
+    }, 0);
+
+console.log(average);
 
 console.log("usersYearsOfExperienceSum:", usersYearsOfExperienceSum);
+// console.log("averageYears:", averageYears);
 
 
 // Use .reduce to get the longest email from the list of users.
 
-const longestEmail = users.reduce((email, user) => {
-    if (user.email.length <= email.length) {
-        if (user.email.length < email.length) {
-            return email;
-        }
-    } else {
-        return user.email;
-    }
-},'')
-
-console.log("longestEmail:", longestEmail)
+// const longestEmail = users.reduce((email, user) => {
+//     if (user.email.length <= email.length) {
+//         if (user.email.length < email.length) {
+//             return email;
+//         }
+//     } else {
+//         return user.email;
+//     }
+// },'')
+//
+// console.log("longestEmail:", longestEmail)
 
 // ternary operator to get result
 
@@ -80,9 +90,9 @@ console.log("longestEmail:", longestEmail)
 // Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, ' +
 // 'luis, zach, fernando, justin.
 
-// const longestEmail = users.reduce((email, user) => {
-//     if (user.email.length > email.length) email.push(user)
-//     return email + user.email;
-// }, 0);
-//
-// console.log("longestEmail:", longestEmail)
+const singleString = users.reduce((email, user) => {
+    if (user.email.length > email.length) email.push(user)
+    return email + user.email;
+}, 0);
+
+console.log("singleString:", singleString)
