@@ -1,37 +1,57 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!-- <head>-->
-<!--     <meta charset="UTF-8">-->
-<!--    <title>js-warmups.html</title>-->
-<!--     <style>-->
-<!--         .square {-->
-<!--             width: 200px;-->
-<!--             height: 200px;-->
-<!--             background-color: gray;-->
-<!--         }-->
-<!--         .square {-->
-<!--             width: 200px;-->
-<!--             height: 200px;-->
-<!--             border: 1px solid black;-->
-<!--         }-->
-<!--         /*a:hover + .square[0] {*/-->
-<!--         /*    display: block;*/-->
-<!--         /*    color: blue;*/-->
-<!--         /*}*/-->
-<!--     </style>-->
-<!--<script src="https://code.jquery.com/jquery-2.2.4.js"-->
-<!--        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="-->
-<!--        crossorigin="anonymous">-->
-<!--</script>-->
-<!-- </head>-->
-<!--<body>-->
-<!--<div class="square" data-color="blue"></div>-->
-<!--<div class="square" data-color="red"></div>-->
-<!--<div class="square" data-color="green"></div>-->
-<!--<div id="square"></div>-->
-<!--<button id="changeColor">Change Color</button>-->
-<!--<button id="reset">Reset</button>-->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <meta charset="UTF-8">
+    <title>js-warmups.html</title>
+     <style>
+         /*.square {*/
+         /*    width: 200px;*/
+         /*    height: 200px;*/
+         /*    background-color: gray;*/
+         /*}*/
+         /*.square {*/
+         /*    width: 200px;*/
+         /*    height: 200px;*/
+         /*    border: 1px solid black;*/
+         /*}*/
+         /*a:hover + .square[0] {*/
+         /*    display: block;*/
+         /*    color: blue;*/
+         /*}*/
+          #square {
+              width: 200px;
+              height: 200px;
+              background-color: gray;
+          }
+         .square {
+             width: 200px;
+             height: 200px;
+             border: 1px solid black;
+         }
+         .yellow {
+             background-color: yellow;
+         }
 
+     </style>
+<script src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous">
+</script>
+ </head>
+<body>
+<div class="square" data-color="blue"></div>
+<div class="square" data-color="red"></div>
+<div class="square" data-color="green"></div>
+<div id="square"></div>
+          <button id="changeColor">Change Color</button>
+          <button id="reset">Reset</button>
+<div id="changingColors">
+    <h2>The squares that change colors</h2>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+</div>
 
 
 
@@ -78,6 +98,17 @@
 //             event.target.style.backgroundColor = targetColor;
 //         });
 //     });
+
+    // $("#changingColors.square").on("click", function() {$(this).toggleClass("yellow")});
+// vanilla JavaScript below compared to above
+//     const changingColorsSquares = document.querySelectorAll("#changingColors.square");
+//
+//     function toggleColor(e){
+//
+//     }
+//
+//     changingColorsSquares.forEach(square => square.addEventListener("click", toggleColor));
+
 
 
 
@@ -400,13 +431,13 @@
 </script>
 <!--</body>-->
 <!--</html>-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Map, Filter, Reduce Mini-Exercises</title>
-</head>
-<body>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Map, Filter, Reduce Mini-Exercises</title>-->
+<!--</head>-->
+<!--<body>-->
 
 <script>
     "use strict";
@@ -415,117 +446,117 @@
 
     // const dogIsTrained = [false, true, false, true, true, true, false];
 
-    const dogs = [
-        {
-            dogName: 'Bubbles',
-            age: 10,
-            isTrained: false
-        },
-        {
-            dogName: 'Lexie',
-            age: 3,
-            isTrained: true
-        },
-        {
-            dogName: 'Doggy',
-            age: 5,
-            isTrained: false
-        },
-        {
-            dogName: 'Flopper',
-            age: 3,
-            isTrained: true
-        },
-        {
-            dogName: 'Lexie',
-            age: 1,
-            isTrained: true
-        },
-        {
-            dogName: 'Skip',
-            age: 7,
-            isTrained: true
-        },
-        {
-            dogName: 'Blue',
-            age: 4,
-            isTrained: false
-        }
-    ];
-
-    // MAP
-
-    // TODO 1: using map, create a new array of dog names from the dogs array
-    // const dogNames = ['Bubbles', 'Lexie', 'Doggy', 'Flopper', 'Lexie', 'Skip', 'Blue'];
-    // console.log(dogNames);
-
-    const dogNames = dogs.map((dog) => dog.dogName)
-    console.log("dogNames:", dogNames)
-
-    // TODO 2: using map, create a new array of dog ages from the dogs array
-    // const dogAges = [10, 3, 5, 3, 1, 7, 4];
-    // console.log(dogAges);
-
-    const dogAges = dogs.map(({age}) => age);
-    console.log("dogAges:", dogAges)
-
-
-    // TODO 3: using map, create a new array of dog objects from the dogs array that only have dog names and age properties and values
-    // console.log('Exercise 3:');
-
-    const getDogNamesAndAges = ({dogName: name, age}) => {
-        return {
-            name, age
-        }
-    }
-
-    const dogsRemap = dogs.map(getDogNamesAndAges);
-
-    console.log("dogsRemap:", dogsRemap)
-
-
-    // FILTER
-
-
-
-    // TODO 4: using filter, create a new array containing only dogs younger than 10 years old
-    // console.log('Exercise 4:');
-    // Example
-    // const bestShow = arrayOfTVShows.filter((show) => show.imdbScore >= 9 && show.firstEpisodeYear >= 2008)
+    // const dogs = [
+    //     {
+    //         dogName: 'Bubbles',
+    //         age: 10,
+    //         isTrained: false
+    //     },
+    //     {
+    //         dogName: 'Lexie',
+    //         age: 3,
+    //         isTrained: true
+    //     },
+    //     {
+    //         dogName: 'Doggy',
+    //         age: 5,
+    //         isTrained: false
+    //     },
+    //     {
+    //         dogName: 'Flopper',
+    //         age: 3,
+    //         isTrained: true
+    //     },
+    //     {
+    //         dogName: 'Lexie',
+    //         age: 1,
+    //         isTrained: true
+    //     },
+    //     {
+    //         dogName: 'Skip',
+    //         age: 7,
+    //         isTrained: true
+    //     },
+    //     {
+    //         dogName: 'Blue',
+    //         age: 4,
+    //         isTrained: false
+    //     }
+    // ];
     //
-    // console.log("bestShow:", bestShow);
-
-    const youngerDogs = dogs.filter((dogs) => dogs.age < 10)
-    console.log("youngerDogs:", youngerDogs);
-
-    // const addFavorites = favoriteNumbers.filter((number) => number % 2)
-    // console.log("addFavorites:", addFavorites)
-
-    // TODO 5: using filter, create a new array containing only dogs named 'Lexie'
-    // console.log('Exercise 5:');
-    // Example
-
-    const lexieDogs = dogs.filter((dogs) => dogs.dogName === 'Lexie')
-    console.log("lexieDogs:", lexieDogs);
-
-    // const filterCatsUnder7Characters = (cat) => cat.length < 10
+    // // MAP
     //
-    // const catsWithShortNames = myCats.filter(filterCatsUnder7Characters);
+    // // TODO 1: using map, create a new array of dog names from the dogs array
+    // // const dogNames = ['Bubbles', 'Lexie', 'Doggy', 'Flopper', 'Lexie', 'Skip', 'Blue'];
+    // // console.log(dogNames);
     //
-    // console.log("catsWithShortnames:", catsWithShortNames)
-
-    // const catsWithShortNames = myCats.filter(filterCatsUnder7Characters);
-    // console.log("catsWithShortnames:", catsWithShortNames)
-
-    // TODO 6: using filter, create a new array containing only dogs that are trained and younger than 10
-    // console.log('Exercise 6:');
-    // Example
-    // const bestShow = arrayOfTVShows.filter((show) => show.imdbScore >= 9 && show.firstEpisodeYear >= 2008)
+    // const dogNames = dogs.map((dog) => dog.dogName)
+    // console.log("dogNames:", dogNames)
     //
-    // console.log("bestShow:", bestShow);
-
-    const bestDog = dogs.filter((dogs) => dogs.age < 10 && dogs.isTrained === true)
-    console.log("bestDog:", bestDog);
+    // // TODO 2: using map, create a new array of dog ages from the dogs array
+    // // const dogAges = [10, 3, 5, 3, 1, 7, 4];
+    // // console.log(dogAges);
+    //
+    // const dogAges = dogs.map(({age}) => age);
+    // console.log("dogAges:", dogAges)
+    //
+    //
+    // // TODO 3: using map, create a new array of dog objects from the dogs array that only have dog names and age properties and values
+    // // console.log('Exercise 3:');
+    //
+    // const getDogNamesAndAges = ({dogName: name, age}) => {
+    //     return {
+    //         name, age
+    //     }
+    // }
+    //
+    // const dogsRemap = dogs.map(getDogNamesAndAges);
+    //
+    // console.log("dogsRemap:", dogsRemap)
+    //
+    //
+    // // FILTER
+    //
+    //
+    //
+    // // TODO 4: using filter, create a new array containing only dogs younger than 10 years old
+    // // console.log('Exercise 4:');
+    // // Example
+    // // const bestShow = arrayOfTVShows.filter((show) => show.imdbScore >= 9 && show.firstEpisodeYear >= 2008)
+    // //
+    // // console.log("bestShow:", bestShow);
+    //
+    // const youngerDogs = dogs.filter((dogs) => dogs.age < 10)
+    // console.log("youngerDogs:", youngerDogs);
+    //
+    // // const addFavorites = favoriteNumbers.filter((number) => number % 2)
+    // // console.log("addFavorites:", addFavorites)
+    //
+    // // TODO 5: using filter, create a new array containing only dogs named 'Lexie'
+    // // console.log('Exercise 5:');
+    // // Example
+    //
+    // const lexieDogs = dogs.filter((dogs) => dogs.dogName === 'Lexie')
+    // console.log("lexieDogs:", lexieDogs);
+    //
+    // // const filterCatsUnder7Characters = (cat) => cat.length < 10
+    // //
+    // // const catsWithShortNames = myCats.filter(filterCatsUnder7Characters);
+    // //
+    // // console.log("catsWithShortnames:", catsWithShortNames)
+    //
+    // // const catsWithShortNames = myCats.filter(filterCatsUnder7Characters);
+    // // console.log("catsWithShortnames:", catsWithShortNames)
+    //
+    // // TODO 6: using filter, create a new array containing only dogs that are trained and younger than 10
+    // // console.log('Exercise 6:');
+    // // Example
+    // // const bestShow = arrayOfTVShows.filter((show) => show.imdbScore >= 9 && show.firstEpisodeYear >= 2008)
+    // //
+    // // console.log("bestShow:", bestShow);
+    //
+    // const bestDog = dogs.filter((dogs) => dogs.age < 10 && dogs.isTrained === true)
+    // console.log("bestDog:", bestDog);
 
 
     // REDUCE
@@ -608,135 +639,135 @@
     // document.getElementsByTagName("body")[0].innerHTML += report
     // TODO 7: using reduce, return a string containing all dog names together with no spaces ("BubblesLexieDoggy...")
     // console.log('Exercise 7:');
-    const dogNamesSum = dogNames.reduce((previousValue, currentValue) => previousValue+currentValue)
-
-    console.log("dogNamesSum:", dogNamesSum);
-
-    // TODO 8: using reduce, return the total of adding all dog ages together (18)
-    // console.log('Exercise 8:');
-    const dogAgesSum = dogAges.reduce((previousValue, currentValue) => previousValue+currentValue)
-
-    console.log("dogAgesSum:", dogAgesSum);
-
-    // TODO 9: using reduce, return an array of dog objects with all isTrained properties set to true
-    // console.log('Exercise 9:');
-    const trainedDogs = dogs.reduce((previousValue, currentValue) => {
-        if (currentValue.isTrained) previousValue.push(currentValue)
-
-        return previousValue
-    },[])
-
-    console.log("trainedDogs", trainedDogs);
-
-    const allDogsTrained = dogs.reduce((previousValue, currentValue) => {
-        previousValue.push({
-            ...currentValue,
-            isTrained: true
-        })
-
-        return previousValue;
-    },[])
-
-    console.log("allDogsTrained :", allDogsTrained);
-
-
-    // EXTRA CHALLENGES
-
-    // TODO 10: what is the average age of each dog?
-    console.log('Exercise 10:');
-
-    // TODO 11: what is the average age of dogs that are trained?
-    console.log('Exercise 11:');
-
-    // TODO 12: what is the average length of names of untrained dogs?
-    console.log('Exercise 12:');
-
-    // TODO 13: what are the combined ages of all dogs in dog years? (7x more than a human year)
-    console.log('Exercise 13:');
-
-    // TODO 14: create a string of the first letters of each dog name for dogs three years old (should be "LF")
-    console.log('Exercise 14:');
-
-
-    // Array of numbers someone likes for some reason
-    const favoriteNumbers = [11, 17, 15, 12, 100, 7, 1, 3, 9, 50,52, 44, 13, 19];
-
-    const myCats = ['Little One', "Mao Mao", "Lizzy"]
-
-    const arrayOfTVShows = [
-        {
-            title: "The Office",
-            seasons: 9,
-            imdbScore: 9,
-            firstEpisodeYear: 2005,
-            characters: ["Micheal", "Pam", "Jim", "Andy"]
-        },
-        {
-            title: "Game of Thrones",
-            seasons: 8,
-            imdbScore: 9.3,
-            firstEpisodeYear: 2011,
-            characters: ["Jon", "Arya", "Sansa", "Tyrion"]
-        },
-        {
-            title: "The Good Place",
-            seasons: 4,
-            imdbScore: 8.2,
-            firstEpisodeYear: 2016,
-            characters: ["Janet", "Chidi", "Elenor", "Jason", "Tahani"]
-        },
-        {
-            title: "Breaking Bad",
-            seasons: 5,
-            imdbScore: 9.5,
-            firstEpisodeYear: 2008,
-            characters: ["Walter", "Jesse", "Skylar"]
-        },
-    ]
-
-    // MAP
-
-    // TODO: double each number in the favorite numbers array.
-
-    const doubleNumbersArray = favoriteNumbers.map((number) => number*2);
-
-    console.log("doubleNumbersArray:", doubleNumbersArray)
-    console.log("favoriteNumbers:", favoriteNumbers)
-
-    const forEachExample = [];
-    favoriteNumbers.forEach((element) =>  {
-        forEachExample.push(element *2)
-    })
-
-    console.log("forEachExample:", forEachExample)
-
-    const uppercaseCats = myCats.map((element) => element.toUpperCase())
-
-    console.log("uppercaseCats:", uppercaseCats)
-
-
-    const mapElementToLI = (element) => `<li>${element}</li>`
-
-    const uppercaseCatsHTML = uppercaseCats.map(mapElementToLI)
-
-    console.log("uppercaseCatsHTML:", uppercaseCatsHTML)
-
-
-    document.getElementById("myCats").innerHTML = uppercaseCatsHTML.join("")
-
-    //TODO: create a headline that could be accessed later. using the title, seasons and imdbScore
-
-    const mapHeadlineToArray =  (show) => {
-        const { title, seasons, imdbScore }  = show
-
-        return {
-            ...show,
-            headline: `${title} (${seasons} seasons) has an average IMDB score of ${imdbScore}`
-        }
-    }
-    const headlineTVShows = arrayOfTVShows.map(mapHeadlineToArray);
-
-    console.log("headlineTVShows:", headlineTVShows)
+    // const dogNamesSum = dogNames.reduce((previousValue, currentValue) => previousValue+currentValue)
+    //
+    // console.log("dogNamesSum:", dogNamesSum);
+    //
+    // // TODO 8: using reduce, return the total of adding all dog ages together (18)
+    // // console.log('Exercise 8:');
+    // const dogAgesSum = dogAges.reduce((previousValue, currentValue) => previousValue+currentValue)
+    //
+    // console.log("dogAgesSum:", dogAgesSum);
+    //
+    // // TODO 9: using reduce, return an array of dog objects with all isTrained properties set to true
+    // // console.log('Exercise 9:');
+    // const trainedDogs = dogs.reduce((previousValue, currentValue) => {
+    //     if (currentValue.isTrained) previousValue.push(currentValue)
+    //
+    //     return previousValue
+    // },[])
+    //
+    // console.log("trainedDogs", trainedDogs);
+    //
+    // const allDogsTrained = dogs.reduce((previousValue, currentValue) => {
+    //     previousValue.push({
+    //         ...currentValue,
+    //         isTrained: true
+    //     })
+    //
+    //     return previousValue;
+    // },[])
+    //
+    // console.log("allDogsTrained :", allDogsTrained);
+    //
+    //
+    // // EXTRA CHALLENGES
+    //
+    // // TODO 10: what is the average age of each dog?
+    // console.log('Exercise 10:');
+    //
+    // // TODO 11: what is the average age of dogs that are trained?
+    // console.log('Exercise 11:');
+    //
+    // // TODO 12: what is the average length of names of untrained dogs?
+    // console.log('Exercise 12:');
+    //
+    // // TODO 13: what are the combined ages of all dogs in dog years? (7x more than a human year)
+    // console.log('Exercise 13:');
+    //
+    // // TODO 14: create a string of the first letters of each dog name for dogs three years old (should be "LF")
+    // console.log('Exercise 14:');
+    //
+    //
+    // // Array of numbers someone likes for some reason
+    // const favoriteNumbers = [11, 17, 15, 12, 100, 7, 1, 3, 9, 50,52, 44, 13, 19];
+    //
+    // const myCats = ['Little One', "Mao Mao", "Lizzy"]
+    //
+    // const arrayOfTVShows = [
+    //     {
+    //         title: "The Office",
+    //         seasons: 9,
+    //         imdbScore: 9,
+    //         firstEpisodeYear: 2005,
+    //         characters: ["Micheal", "Pam", "Jim", "Andy"]
+    //     },
+    //     {
+    //         title: "Game of Thrones",
+    //         seasons: 8,
+    //         imdbScore: 9.3,
+    //         firstEpisodeYear: 2011,
+    //         characters: ["Jon", "Arya", "Sansa", "Tyrion"]
+    //     },
+    //     {
+    //         title: "The Good Place",
+    //         seasons: 4,
+    //         imdbScore: 8.2,
+    //         firstEpisodeYear: 2016,
+    //         characters: ["Janet", "Chidi", "Elenor", "Jason", "Tahani"]
+    //     },
+    //     {
+    //         title: "Breaking Bad",
+    //         seasons: 5,
+    //         imdbScore: 9.5,
+    //         firstEpisodeYear: 2008,
+    //         characters: ["Walter", "Jesse", "Skylar"]
+    //     },
+    // ]
+    //
+    // // MAP
+    //
+    // // TODO: double each number in the favorite numbers array.
+    //
+    // const doubleNumbersArray = favoriteNumbers.map((number) => number*2);
+    //
+    // console.log("doubleNumbersArray:", doubleNumbersArray)
+    // console.log("favoriteNumbers:", favoriteNumbers)
+    //
+    // const forEachExample = [];
+    // favoriteNumbers.forEach((element) =>  {
+    //     forEachExample.push(element *2)
+    // })
+    //
+    // console.log("forEachExample:", forEachExample)
+    //
+    // const uppercaseCats = myCats.map((element) => element.toUpperCase())
+    //
+    // console.log("uppercaseCats:", uppercaseCats)
+    //
+    //
+    // const mapElementToLI = (element) => `<li>${element}</li>`
+    //
+    // const uppercaseCatsHTML = uppercaseCats.map(mapElementToLI)
+    //
+    // console.log("uppercaseCatsHTML:", uppercaseCatsHTML)
+    //
+    //
+    // document.getElementById("myCats").innerHTML = uppercaseCatsHTML.join("")
+    //
+    // //TODO: create a headline that could be accessed later. using the title, seasons and imdbScore
+    //
+    // const mapHeadlineToArray =  (show) => {
+    //     const { title, seasons, imdbScore }  = show
+    //
+    //     return {
+    //         ...show,
+    //         headline: `${title} (${seasons} seasons) has an average IMDB score of ${imdbScore}`
+    //     }
+    // }
+    // const headlineTVShows = arrayOfTVShows.map(mapHeadlineToArray);
+    //
+    // console.log("headlineTVShows:", headlineTVShows)
 
 
 </script>
