@@ -326,5 +326,55 @@
 //
 // console.log(returnMostFrequentUser(users));
 
+// Movies project
 
+function renderMovies(movies) {
+    var html = '';
+    for(var i = movies.length - 1; i >= 0; i--) {
+        html += renderMovie(movies[i]);
+    }
+    return html;
+}
+
+
+
+//
+function updateMovies(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    var selectedMovie = movieSelection.value;
+    var filteredMovies = [];
+    movies.forEach(function(movie) {
+        if (movie.title === selectedTitle) {
+            filteredMovies.push(movie);
+        }
+        if  (titleSelection.value === 'all'){
+            filteredMovies.push(movie)
+        }
+    });
+    tbody.innerHTML = renderMovies(filteredMovies);
+}
+
+function movieNames(){
+    var lookMovie = searchBox.value.toUpperCase();
+    var movieName = [];
+    console.log(lookMovie);
+    movies.forEach(function(movie){
+        if(movie.name.toUpperCase().includes(lookMovie)){
+            movieName.push(movie);
+            console.log(movieName);
+        }
+    });
+    tbody.innerHTML = renderMovies(movieName);
+}
+
+var tbody = document.querySelector('#movies');
+var submitButton = document.querySelector('#submit');
+var titleSelection = document.querySelector('#title-selection');
+var searchBox = document.querySelector('#searchBox');
+
+tbody.innerHTML = renderMovies(movies);
+
+submitButton.addEventListener('click', updateMovies);
+titleSelection.addEventListener("input", updateMovies);
+searchBox.addEventListener('keyup', movieNames)
 
