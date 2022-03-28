@@ -328,53 +328,93 @@
 
 // Movies project
 
-function renderMovies(movies) {
-    var html = '';
-    for(var i = movies.length - 1; i >= 0; i--) {
-        html += renderMovie(movies[i]);
-    }
-    return html;
-}
-
-
-
+// function renderMovies(movies) {
+//     var html = '';
+//     for(var i = movies.length - 1; i >= 0; i--) {
+//         html += renderMovie(movies[i]);
+//     }
+//     return html;
+// }
 //
-function updateMovies(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedMovie = movieSelection.value;
-    var filteredMovies = [];
-    movies.forEach(function(movie) {
-        if (movie.title === selectedTitle) {
-            filteredMovies.push(movie);
+//
+//
+// //
+// function updateMovies(e) {
+//     e.preventDefault(); // don't submit the form, we just want to update the data
+//     var selectedMovie = movieSelection.value;
+//     var filteredMovies = [];
+//     movies.forEach(function(movie) {
+//         if (movie.title === selectedTitle) {
+//             filteredMovies.push(movie);
+//         }
+//         if  (titleSelection.value === 'all'){
+//             filteredMovies.push(movie)
+//         }
+//     });
+//     tbody.innerHTML = renderMovies(filteredMovies);
+// }
+//
+// function movieNames(){
+//     var lookMovie = searchBox.value.toUpperCase();
+//     var movieName = [];
+//     console.log(lookMovie);
+//     movies.forEach(function(movie){
+//         if(movie.name.toUpperCase().includes(lookMovie)){
+//             movieName.push(movie);
+//             console.log(movieName);
+//         }
+//     });
+//     tbody.innerHTML = renderMovies(movieName);
+// }
+//
+// var tbody = document.querySelector('#movies');
+// var submitButton = document.querySelector('#submit');
+// var titleSelection = document.querySelector('#title-selection');
+// var searchBox = document.querySelector('#searchBox');
+//
+// tbody.innerHTML = renderMovies(movies);
+//
+// submitButton.addEventListener('click', updateMovies);
+// titleSelection.addEventListener("input", updateMovies);
+// searchBox.addEventListener('keyup', movieNames)
+
+// Create a function, encodeStr, that takes in a string and returns the string
+// of characters with the following substitutions:
+//     ‘a’ or ‘A’ becomes ‘@’
+// ‘i’ or ‘I’ becomes ‘1’
+// ‘s’ or ‘S’ becomse ‘$’
+
+// function encodeStr(str){
+//     if (str === 'a' || str === 'A') {
+//         return '@';
+//     } else if (str === 'i' || str === 'I'); {
+//         return '1';
+//      else if (str === 's' || str === 'S'); {
+//                 return '$';
+//             }
+// }
+
+function encodeStr(str) {
+    // console.log('hello');
+//    split the string into an array of chars
+//    map over them to produce a return value that changes the three chars and returns
+//    the current character otherwise
+//    join the chars into our final output
+
+    return str.split('').map(char => {
+        if (char.toLowerCase() === 'a') {
+            return '@';
+        } else if (char.toLowerCase() === 's') {
+            return '$';
+        } else if (char.toLowerCase() === 'i') {
+            return 1;
+        } else {
+            return char;
         }
-        if  (titleSelection.value === 'all'){
-            filteredMovies.push(movie)
-        }
-    });
-    tbody.innerHTML = renderMovies(filteredMovies);
+    }).join('');
 }
 
-function movieNames(){
-    var lookMovie = searchBox.value.toUpperCase();
-    var movieName = [];
-    console.log(lookMovie);
-    movies.forEach(function(movie){
-        if(movie.name.toUpperCase().includes(lookMovie)){
-            movieName.push(movie);
-            console.log(movieName);
-        }
-    });
-    tbody.innerHTML = renderMovies(movieName);
-}
-
-var tbody = document.querySelector('#movies');
-var submitButton = document.querySelector('#submit');
-var titleSelection = document.querySelector('#title-selection');
-var searchBox = document.querySelector('#searchBox');
-
-tbody.innerHTML = renderMovies(movies);
-
-submitButton.addEventListener('click', updateMovies);
-titleSelection.addEventListener("input", updateMovies);
-searchBox.addEventListener('keyup', movieNames)
-
+console.log(encodeStr('apple'));    // returns ‘@pple’
+console.log(encodeStr('codeup')); // returns ‘codeup’
+console.log(encodeStr('SASS')); // returns ‘$@$$’
+console.log(encodeStr('bike')); // returns ‘b1ke’
