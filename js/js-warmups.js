@@ -414,7 +414,78 @@ function encodeStr(str) {
     }).join('');
 }
 
+// Another solution
+// function encodeStr(str){
+//     str = str.replace(/[aA]/g, "@");
+//     str = str.replace(/[iI]/g, "1");
+//     str = str.replace(/[sS]/g, "$");
+//     return str;
+// }
+
 console.log(encodeStr('apple'));    // returns ‘@pple’
 console.log(encodeStr('codeup')); // returns ‘codeup’
 console.log(encodeStr('SASS')); // returns ‘$@$$’
 console.log(encodeStr('bike')); // returns ‘b1ke’
+
+// Write a function, returnMostCommonVowel, that takes in a string and returns the
+// most common vowel in the string.
+// Assume the characters in the string are all lowercase and only
+// 'a' 'e' 'i' 'o' 'u' count as vowels. Return the most common vowel from the string.
+//
+// If the highest vowel count is shared between multiple vowels, return the first
+// vowel alphabetically. (2 'a's and 2 'e's should 'a')
+// If no vowels are in the string return false.
+
+// function returnMostCommonVowel(str){
+//     let vowel = ['a', 'e', 'i', 'o', 'u'];
+//     for (int i = 0; i < str.length(vowel); i++) {
+//         ch = str.charAt(i);
+//         ch = ch.toLowerCase(ch);
+//
+//     //    if this is a vowel
+//         if (ch === 'a' || ch === 'e' || ch === 'i' || ch === 'o' || ch === 'u') {
+//             vowel++;
+//         }
+//     //    which vowel occurs the most
+//         if (ch === 'a')
+//             return vowelA++;
+//         else if (ch === 'e')
+//             return vowelE++;
+//         else if ( ch === 'i')
+//             return vowelI++;
+//         else if ( ch === 'o')
+//             return vowelO++;
+//         else if ( ch === 'u')
+//             return vowelU++;
+//     }
+// }
+
+
+// String str = "GeeksForGeeks";
+// str = str.toLowerCase();
+// int count = 0;
+//
+// for (int i = 0; i < str.length(); i++) {
+//     // check if char[i] is vowel
+//     if (str.charAt(i) == 'a' || str.charAt(i) == 'e'
+//         || str.charAt(i) == 'i'
+//         || str.charAt(i) == 'o'
+//         || str.charAt(i) == 'u') {
+//         // count increments if there is vowel in
+//         // char[i]
+//         count++;
+//     }
+// }
+//
+// // display total count of vowels in string
+// System.out.println(
+//     "Total no of vowels in string are: " + count);
+
+// console.log(returnMostCommonVowel('leetcode')); // returns 'e'
+// console.log(returnMostCommonVowel('banana')); // returns 'a'
+// console.log(returnMostCommonVowel('asdf')); // returns 'a'
+// console.log(returnMostCommonVowel('nnnn')); // returns false
+// console.log(returnMostCommonVowel('hello')); // returns 'e'
+// console.log(returnMostCommonVowel('codeup')); // returns 'e'
+// console.log(returnMostCommonVowel('needful')); // returns 'e'
+
