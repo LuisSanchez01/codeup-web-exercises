@@ -394,25 +394,25 @@
 //             }
 // }
 
-function encodeStr(str) {
+// function encodeStr(str) {
     // console.log('hello');
 //    split the string into an array of chars
 //    map over them to produce a return value that changes the three chars and returns
 //    the current character otherwise
 //    join the chars into our final output
 
-    return str.split('').map(char => {
-        if (char.toLowerCase() === 'a') {
-            return '@';
-        } else if (char.toLowerCase() === 's') {
-            return '$';
-        } else if (char.toLowerCase() === 'i') {
-            return 1;
-        } else {
-            return char;
-        }
-    }).join('');
-}
+//     return str.split('').map(char => {
+//         if (char.toLowerCase() === 'a') {
+//             return '@';
+//         } else if (char.toLowerCase() === 's') {
+//             return '$';
+//         } else if (char.toLowerCase() === 'i') {
+//             return 1;
+//         } else {
+//             return char;
+//         }
+//     }).join('');
+// }
 
 // Another solution
 // function encodeStr(str){
@@ -422,10 +422,10 @@ function encodeStr(str) {
 //     return str;
 // }
 
-console.log(encodeStr('apple'));    // returns ‘@pple’
-console.log(encodeStr('codeup')); // returns ‘codeup’
-console.log(encodeStr('SASS')); // returns ‘$@$$’
-console.log(encodeStr('bike')); // returns ‘b1ke’
+// console.log(encodeStr('apple'));    // returns ‘@pple’
+// console.log(encodeStr('codeup')); // returns ‘codeup’
+// console.log(encodeStr('SASS')); // returns ‘$@$$’
+// console.log(encodeStr('bike')); // returns ‘b1ke’
 
 // Write a function, returnMostCommonVowel, that takes in a string and returns the
 // most common vowel in the string.
@@ -437,50 +437,21 @@ console.log(encodeStr('bike')); // returns ‘b1ke’
 // If no vowels are in the string return false.
 
 // function returnMostCommonVowel(str){
-//     let vowel = ['a', 'e', 'i', 'o', 'u'];
-//     for (int i = 0; i < str.length(vowel); i++) {
-//         ch = str.charAt(i);
-//         ch = ch.toLowerCase(ch);
+//     let i = 0;
+//     let currentVowelObject;
 //
-//     //    if this is a vowel
-//         if (ch === 'a' || ch === 'e' || ch === 'i' || ch === 'o' || ch === 'u') {
-//             vowel++;
-//         }
-//     //    which vowel occurs the most
-//         if (ch === 'a')
-//             return vowelA++;
-//         else if (ch === 'e')
-//             return vowelE++;
-//         else if ( ch === 'i')
-//             return vowelI++;
-//         else if ( ch === 'o')
-//             return vowelO++;
-//         else if ( ch === 'u')
-//             return vowelU++;
-//     }
-// }
-
-
-// String str = "GeeksForGeeks";
-// str = str.toLowerCase();
-// int count = 0;
+//     let vowels = 'aeiou'.split('').map(vowel => {
+//     return {vowel: vowel, count: 0}
+// });
 //
-// for (int i = 0; i < str.length(); i++) {
-//     // check if char[i] is vowel
-//     if (str.charAt(i) == 'a' || str.charAt(i) == 'e'
-//         || str.charAt(i) == 'i'
-//         || str.charAt(i) == 'o'
-//         || str.charAt(i) == 'u') {
-//         // count increments if there is vowel in
-//         // char[i]
-//         count++;
+//     for (i; i < str.length; i += 1){
+//     currentVowelObject = vowels.find(({vowel:}) => vowel === str[i]);
 //     }
 // }
 //
-// // display total count of vowels in string
-// System.out.println(
-//     "Total no of vowels in string are: " + count);
-
+//
+//
+//
 // console.log(returnMostCommonVowel('leetcode')); // returns 'e'
 // console.log(returnMostCommonVowel('banana')); // returns 'a'
 // console.log(returnMostCommonVowel('asdf')); // returns 'a'
@@ -488,4 +459,45 @@ console.log(encodeStr('bike')); // returns ‘b1ke’
 // console.log(returnMostCommonVowel('hello')); // returns 'e'
 // console.log(returnMostCommonVowel('codeup')); // returns 'e'
 // console.log(returnMostCommonVowel('needful')); // returns 'e'
+
+// Create a function, returnAvgAdminSalary, that takes in an array of users and returns
+// the average salary of all admins. Round to the nearest dollar.
+
+    // Example:
+
+
+// function returnAvgAdminSalary(array) {
+//     const admins = users.filter(user => user.isAdmin);
+//     return admins.reduce((accum, curr) => accum + curr.salary, 0) / admins.length;
+// }
+//
+// const users = [
+//     {
+//         name: 'Fred',
+//         isAdmin: true,
+//         salary: 20000
+//     },
+//     {
+//         name: 'Cathy',
+//         isAdmin: false,
+//         salary: 40000
+//     },
+//     {
+//         name: 'Sally',
+//         isAdmin: true,
+//         salary: 80000
+//     },
+//     {
+//         name: 'Kyle',
+//         isAdmin: true,
+//         salary: 50000
+//     },
+//     {
+//         name: 'Cynthia',
+//         isAdmin: false,
+//         salary: 100000
+//     }
+// ];
+//
+// console.log(returnAvgAdminSalary(users)); // returns 116666
 
